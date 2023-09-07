@@ -4,5 +4,6 @@
 	"useTabs": true,
 	"tabWidth": 4,
 	"bracketSpacing": true,
-	"endOfLine": "lf"
+	"endOfLine": "lf",
+	"plugins": ["prettier-plugin-tailwindcss"]
 }
