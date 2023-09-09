@@ -2,6 +2,9 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Lato } from 'next/font/google'
+import Footer from './footer'
+import Navbar from './navbar'
+import { cn } from '@/lib/utils'
 
 const inter = Inter({ subsets: ['latin'] })
 const lato = Lato({
@@ -21,13 +24,18 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={lato.className}>
+			<body
+				className={cn(lato.className, 'relative h-full min-h-screen')}
+			>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
+					themes={['light', 'dark', 'system']}
 				>
+					<Navbar />
 					{children}
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

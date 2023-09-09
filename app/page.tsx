@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import WritingList from '@/views/home/WritingList'
 import { ModeToggle } from '@/components/mode-toggle'
-import Image from 'next/image'
-import writings from '@/static/writings'
+import { Merriweather, Roboto_Mono } from 'next/font/google'
+import { cn } from '@/lib/utils'
+import { getAllPostsMeta } from '@/lib/mdx'
 
 type WritingType = {
 	body: string
@@ -11,8 +12,13 @@ type WritingType = {
 	userId: number
 }
 
+const merriweather = Merriweather({
+	subsets: ['latin'],
+	weight: ['400', '700'],
+})
+
 export default async function Home() {
-	// const writings: WritingType[] = await getData()
+	const writings = await getAllPostsMeta()
 
 	return (
 		<>
@@ -25,26 +31,33 @@ export default async function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className="w-full">
-				<nav className="mx-auto flex max-w-7xl items-center justify-between px-16 py-8">
-					<span className="font-mono text-3xl font-extrabold">
-						{'{}'}
+				<header
+					className={cn(
+						merriweather.className,
+						'mx-auto max-w-3xl px-6 py-20 text-3xl font-bold text-zinc-800 md:text-4xl',
+						'dark:text-zinc-200',
+					)}
+				>
+					Setiap tulisan merupakan dunia tersendiri, yang
+					terapung-apung antara dunia kenyataan dan dunia impian
+					<span className="mt-6 block text-sm font-normal italic">
+						&mdash; Rumah Kaca (1988), Pramoedya Ananta Toer
 					</span>
-					<ModeToggle />
-				</nav>
+				</header>
 				<WritingList
 					writings={writings}
-					className="mx-auto max-w-3xl"
+					className="mx-auto max-w-3xl px-6 md:px-0"
 				/>
 			</main>
 		</>
 	)
 }
 
-export async function getData() {
-	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-		cache: 'no-cache',
-	})
-	const data = await res.json()
+// export async function getData() {
+// 	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+// 		cache: 'no-cache',
+// 	})
+// 	const data = await res.json()
 
-	return data
-}
+// 	return data
+// }
