@@ -15,7 +15,7 @@ export default function WritingList(props: {
 }) {
 	const { writings } = props
 	return (
-		<div className={cn(props.className, 'divide-y mb-28')}>
+		<div className={cn(props.className, 'divide-y')}>
 			{writings?.map((writing: any) => {
 				return <WritingListItem writing={writing} key={writing.title} />
 			})}

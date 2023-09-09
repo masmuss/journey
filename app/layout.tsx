@@ -23,10 +23,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
-			<body
-				className={cn(lato.className, 'relative h-full min-h-screen')}
-			>
+		<html lang="en" className="h-full">
+			<body className={cn(lato.className, 'relative min-h-full')}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

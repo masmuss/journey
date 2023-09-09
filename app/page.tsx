@@ -46,18 +46,9 @@ export default async function Home() {
 				</header>
 				<WritingList
 					writings={writings}
-					className="mx-auto max-w-3xl px-6 md:px-0"
+					className="relative mx-auto mb-28 max-w-3xl px-6 md:px-0"
 				/>
 			</main>
 		</>
 	)
 }
-
-// export async function getData() {
-// 	const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-// 		cache: 'no-cache',
-// 	})
-// 	const data = await res.json()
-
-// 	return data
-// }

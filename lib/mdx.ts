@@ -33,15 +33,8 @@ export const getAllPostsMeta = async () => {
 
 	for (const file of files) {
 		const { meta }: { meta: any } = await getPostBySlug(file)
-
-		meta.publishedAt = new Date(meta.publishedAt)
-
 		posts.push(meta)
 	}
-
-	posts.sort(
-		(a: any, b: any) => new Date(b.publishedAt) - new Date(a.publishedAt),
-	)
 
 	return posts
 }
