@@ -2,6 +2,7 @@ import { getPostBySlug } from '@/lib/mdx'
 import { JSXElementConstructor, ReactElement } from 'react'
 import { Merriweather } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import getFormattedDate from '@/lib/getFormattedDate'
 
 const merriweather = Merriweather({
 	subsets: ['latin'],
@@ -38,12 +39,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					className={cn(
 						merriweather.className,
 						'mb-2 text-2xl font-bold',
-						'md:text-3xl'
+						'md:text-3xl',
 					)}
 				>
 					{meta.title}
 				</h1>
-				<p className="text-gray-500">{meta.publishedAt}</p>
+				<p className="text-gray-500">
+					{getFormattedDate(meta.publishedAt)}
+				</p>
 			</div>
 			<article
 				className={cn(

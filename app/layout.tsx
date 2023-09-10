@@ -1,12 +1,12 @@
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Lato } from 'next/font/google'
-import Footer from './footer'
-import Navbar from './navbar'
+import { Lato } from 'next/font/google'
+import Footer from '../components/partials/footer'
+import Navbar from '../components/partials/navbar'
 import { cn } from '@/lib/utils'
+import Head from 'next/head'
 
-const inter = Inter({ subsets: ['latin'] })
 const lato = Lato({
 	subsets: ['latin'],
 	weight: ['400', '700'],
@@ -23,8 +23,21 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en" className="h-full">
-			<body className={cn(lato.className, 'relative min-h-full')}>
+		<html lang="id" className="h-full">
+			<Head>
+				<title>A Journey</title>
+				<meta
+					name="description"
+					content="A Little piece of my journey"
+				/>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+
+			<body className={cn(lato.className, 'relative scroll-smooth')}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
