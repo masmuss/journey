@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
+import { notFound } from 'next/navigation'
 
 const rootDirectory = path.join(process.cwd(), '.', 'content')
 
@@ -9,6 +10,10 @@ export const getPostBySlug = async (slug: string) => {
 	const filePath = path.join(rootDirectory, `${realSlug}.mdx`)
 
 	const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
+
+	if (!fileContent) {
+		return notFound()
+	}
 
 	const { frontmatter, content } = await compileMDX({
 		source: fileContent,
@@ -36,5 +41,6 @@ export const getAllPostsMeta = async () => {
 		posts.push(meta)
 	}
 
+	posts.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
 	return posts
 }
