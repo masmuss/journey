@@ -38,8 +38,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 				<h1
 					className={cn(
 						merriweather.className,
-						'mb-2 text-2xl font-bold',
-						'md:text-3xl',
+						'mb-2 text-3xl font-bold',
+						'md:text-4xl',
 					)}
 				>
 					{meta.title}
@@ -51,9 +51,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			<article
 				className={cn(
 					'prose-base prose-gray mx-auto mb-10 py-4',
-					'prose-blockquote:border-l-4 prose-blockquote:italic',
-					'md:prose-lg ',
-					'dark:text-gray-200',
+					' prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
+					'md:prose-lg',
+					'dark:text-zinc-200',
 				)}
 			>
 				{content}
