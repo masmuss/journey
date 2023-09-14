@@ -35,7 +35,7 @@ function WritingListItem(props: { writing: any }) {
 				<h1
 					className={cn(
 						merriweather.className,
-						'mb-1 text-xl font-semibold tracking-wide text-zinc-800',
+						'mb-1 text-2xl font-semibold tracking-wide text-zinc-800',
 						'group-hover:text-cyan-600',
 						'dark:text-zinc-200',
 					)}
@@ -44,7 +44,7 @@ function WritingListItem(props: { writing: any }) {
 				</h1>
 				<h3
 					className={cn(
-						'text-sm text-gray-500',
+						'text-base text-gray-500',
 						'group-hover:text-cyan-600',
 						'dark:text-zinc-400',
 					)}

@@ -3,6 +3,7 @@ import { JSXElementConstructor, ReactElement } from 'react'
 import { Merriweather } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import getFormattedDate from '@/lib/getFormattedDate'
+import { Metadata } from 'next'
 
 const merriweather = Merriweather({
 	subsets: ['latin'],
@@ -20,7 +21,7 @@ export async function generateMetadata({
 	params: { slug: string }
 }) {
 	const { meta } = await getPageContent(params.slug)
-	return { title: meta.title }
+	return { ...meta }
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -50,9 +51,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 			</div>
 			<article
 				className={cn(
-					'prose-base prose-gray mx-auto mb-10 py-4',
+					'prose-lg prose-gray mx-auto mb-10 py-4',
 					' prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
-					'md:prose-lg',
+					'md:prose-xl',
 					'dark:text-zinc-200',
 				)}
 			>

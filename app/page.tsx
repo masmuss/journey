@@ -26,8 +26,9 @@ export default async function Home() {
 				<header
 					className={cn(
 						merriweather.className,
-						'mx-auto max-w-3xl px-6 py-20 text-3xl font-bold text-zinc-800 md:text-4xl',
+						'mx-auto max-w-3xl px-6 py-20 text-3xl font-bold text-zinc-800',
 						'dark:text-zinc-200',
+						'md:text-4xl',
 					)}
 				>
 					Setiap tulisan merupakan dunia tersendiri, yang
