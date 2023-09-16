@@ -1,9 +1,16 @@
-import { getPostBySlug } from '@/lib/mdx'
-import { JSXElementConstructor, ReactElement } from 'react'
 import { Merriweather } from 'next/font/google'
-import { cn } from '@/lib/utils'
+import { ReactElement } from 'react'
+
 import getFormattedDate from '@/lib/getFormattedDate'
-import { Metadata } from 'next'
+import { getPostBySlug } from '@/lib/mdx'
+import { cn } from '@/lib/utils'
+
+type Metadata = {
+	title?: string
+	slug: string
+	description?: string
+	publishedAt?: string
+}
 
 const merriweather = Merriweather({
 	subsets: ['latin'],
@@ -29,8 +36,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		content,
 		meta,
 	}: {
-		content: ReactElement<any, string | JSXElementConstructor<any>>
-		meta: any
+		content: ReactElement
+		meta: Metadata
 	} = await getPageContent(params.slug)
 
 	return (
@@ -46,7 +53,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					{meta.title}
 				</h1>
 				<p className="text-gray-500">
-					{getFormattedDate(meta.publishedAt)}
+					{getFormattedDate(meta.publishedAt as string)}
 				</p>
 			</div>
 			<article

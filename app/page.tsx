@@ -1,16 +1,8 @@
-import Head from 'next/head'
-import WritingList from '@/views/home/WritingList'
-import { ModeToggle } from '@/components/mode-toggle'
-import { Merriweather, Roboto_Mono } from 'next/font/google'
-import { cn } from '@/lib/utils'
-import { getAllPostsMeta } from '@/lib/mdx'
+import { Merriweather } from 'next/font/google'
 
-type WritingType = {
-	body: string
-	id: number
-	title: string
-	userId: number
-}
+import { getAllPostsMeta } from '@/lib/mdx'
+import { cn } from '@/lib/utils'
+import WritingList from '@/views/home/WritingList'
 
 const merriweather = Merriweather({
 	subsets: ['latin'],

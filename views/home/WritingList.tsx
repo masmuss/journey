@@ -1,9 +1,17 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { Merriweather } from 'next/font/google'
 import Link from 'next/link'
-import { Roboto_Slab, Merriweather } from 'next/font/google'
+
 import getFormattedDate from '@/lib/getFormattedDate'
+import { cn } from '@/lib/utils'
+
+type ContentType = {
+	title?: string
+	slug: string
+	description?: string
+	publishedAt?: string
+}
 
 const merriweather = Merriweather({
 	subsets: ['latin'],
@@ -11,20 +19,20 @@ const merriweather = Merriweather({
 })
 
 export default function WritingList(props: {
-	writings: any
+	writings: ContentType[]
 	className: string
 }) {
 	const { writings } = props
 	return (
 		<div className={cn(props.className, 'divide-y')}>
-			{writings?.map((writing: any) => {
+			{writings?.map((writing: ContentType) => {
 				return <WritingListItem writing={writing} key={writing.title} />
 			})}
 		</div>
 	)
 }
 
-function WritingListItem(props: { writing: any }) {
+function WritingListItem(props: { writing: ContentType }) {
 	const { writing } = props
 	return (
 		<Link
@@ -58,7 +66,7 @@ function WritingListItem(props: { writing: any }) {
 					'group-hover:text-cyan-600',
 				)}
 			>
-				{getFormattedDate(writing.publishedAt)}
+				{getFormattedDate(writing.publishedAt as string)}
 			</p>
 		</Link>
 	)
