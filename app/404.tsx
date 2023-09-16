@@ -1,9 +1,11 @@
 import React from 'react'
 
 function Page() {
-	return <div>
-		<h1>404</h1>
-	</div>
+	return (
+		<div>
+			<h1>404</h1>
+		</div>
+	)
 }
 
 export default Page

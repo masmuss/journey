@@ -1,11 +1,22 @@
 import fs from 'fs'
 import path from 'path'
-import { compileMDX } from 'next-mdx-remote/rsc'
+
 import { notFound, redirect } from 'next/navigation'
+import { compileMDX } from 'next-mdx-remote/rsc'
+
+type ContentType = {
+	meta: {
+		slug: string
+		title: string
+		description: string
+		publishedAt: string
+	}
+	content: React.ReactElement
+}
 
 const rootDirectory = path.join(process.cwd(), '.', 'content')
 
-export const getPostBySlug = async (slug: string) => {
+export const getPostBySlug = async (slug: string): Promise<ContentType> => {
 	const realSlug = slug.replace(/\.mdx$/, '')
 	const filePath = path.join(rootDirectory, `${realSlug}.mdx`)
 
@@ -21,9 +32,9 @@ export const getPostBySlug = async (slug: string) => {
 	return {
 		meta: {
 			slug: realSlug,
-			title: frontmatter.title,
-			description: frontmatter.description,
-			publishedAt: frontmatter.publishedAt,
+			title: frontmatter.title as string,
+			description: frontmatter.description as string,
+			publishedAt: frontmatter.publishedAt as string,
 		},
 		content,
 	}
@@ -32,10 +43,19 @@ export const getPostBySlug = async (slug: string) => {
 export const getAllPostsMeta = async () => {
 	const files = fs.readdirSync(rootDirectory)
 
-	let posts = []
+	const posts = []
 
 	for (const file of files) {
-		const { meta }: { meta: any } = await getPostBySlug(file)
+		const {
+			meta,
+		}: {
+			meta: {
+				slug: string
+				title: string
+				description: string
+				publishedAt: string
+			}
+		} = await getPostBySlug(file)
 		posts.push(meta)
 	}
 

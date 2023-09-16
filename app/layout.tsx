@@ -1,12 +1,13 @@
-import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
+
+import { ThemeProvider } from '@/components/theme-provider'
+import { cn } from '@/lib/utils'
+
+import { LayoutProvider } from './LayoutProvider'
 import Footer from '../components/partials/footer'
 import Navbar from '../components/partials/navbar'
-import { cn } from '@/lib/utils'
-import Head from 'next/head'
-import { LayoutProvider } from './LayoutProvider'
 
 const lato = Lato({
 	subsets: ['latin'],
