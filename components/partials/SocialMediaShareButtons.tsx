@@ -1,15 +1,15 @@
 'use client'
 import {
 	FacebookIcon,
+	FacebookMessengerIcon,
+	FacebookMessengerShareButton,
 	FacebookShareButton,
+	TelegramIcon,
+	TelegramShareButton,
 	TwitterIcon,
 	TwitterShareButton,
 	WhatsappIcon,
 	WhatsappShareButton,
-	TelegramIcon,
-	TelegramShareButton,
-	FacebookMessengerIcon,
-	FacebookMessengerShareButton,
 } from 'next-share'
 import React from 'react'
 
