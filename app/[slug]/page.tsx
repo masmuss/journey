@@ -64,13 +64,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					</p>
 				</div>
 				<SocialMediaShareButtons
-					className="mt-2 flex flex-row md:hidden"
+					className="mt-2 flex flex-row items-center md:hidden"
 					slug={params.slug}
 					description={meta.description}
 				/>
 				<article
 					className={cn(
-						'prose-lg prose-gray mx-auto mb-10 py-4',
+						'prose-lg prose-gray mx-auto mb-10 py-10',
 						' prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
 						'md:prose-xl',
 						'dark:text-zinc-200',

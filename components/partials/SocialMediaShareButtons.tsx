@@ -1,14 +1,16 @@
 'use client'
 import {
 	FacebookIcon,
-	FacebookMessengerIcon,
+	MessageCircleIcon,
+	PhoneIcon,
+	SendIcon,
+	TwitterIcon,
+} from 'lucide-react'
+import {
 	FacebookMessengerShareButton,
 	FacebookShareButton,
-	TelegramIcon,
 	TelegramShareButton,
-	TwitterIcon,
 	TwitterShareButton,
-	WhatsappIcon,
 	WhatsappShareButton,
 } from 'next-share'
 import React from 'react'
@@ -29,27 +31,32 @@ export default function SocialMediaShareButtons({
 	const url: string = `https://journey.khoirul.me/${slug}`
 
 	return (
-		<div className={cn('flex gap-6', className)}>
-			<h3 className="hidden opacity-50 md:block">share</h3>
-			<div className="mt-4 flex flex-row gap-2 md:flex-col">
+		<div
+			className={cn(
+				'flex items-center gap-6 md:justify-center',
+				className,
+			)}
+		>
+			<h3 className="hidden opacity-50 md:block md:text-center">share</h3>
+			<div className="mt-6 flex flex-row items-center justify-center gap-4 md:flex-col">
 				<FacebookShareButton url={url} quote={description}>
-					<FacebookIcon size={32} round />
+					<FacebookIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
 				</FacebookShareButton>
 				<FacebookMessengerShareButton url={url} appId={''}>
-					<FacebookMessengerIcon size={32} round />
+					<MessageCircleIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
 				</FacebookMessengerShareButton>
 				<TelegramShareButton url={url} title={description}>
-					<TelegramIcon size={32} round />
+					<SendIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
 				</TelegramShareButton>
 				<TwitterShareButton url={url} title={description}>
-					<TwitterIcon size={32} round />
+					<TwitterIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
 				</TwitterShareButton>
 				<WhatsappShareButton
 					url={url}
 					title={description}
 					separator=":: "
 				>
-					<WhatsappIcon size={32} round />
+					<PhoneIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
 				</WhatsappShareButton>
 			</div>
 		</div>
