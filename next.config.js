@@ -13,6 +13,22 @@ const nextConfig = {
 	experimental: {
 		mdxRs: true,
 	},
+	images: {
+		remotePatterns: [
+			{
+				hostname: 'images.unsplash.com',
+				port: '',
+				protocol: 'https',
+				pathname: '/**',
+			},
+			{
+				hostname: 'unsplash.com',
+				port: '',
+				protocol: 'https',
+				pathname: '/**',
+			},
+		],
+	},
 }
 
 module.exports = withMDX(nextConfig)

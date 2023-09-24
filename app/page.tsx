@@ -1,12 +1,12 @@
-import { Merriweather } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 import { getAllPostsMeta } from '@/lib/mdx'
 import { cn } from '@/lib/utils'
 import WritingList from '@/views/home/WritingList'
 
-const merriweather = Merriweather({
+const montserrat = Montserrat({
 	subsets: ['latin'],
-	weight: ['400', '700'],
+	weight: ['100', '200', '300', '400', '700', '800'],
 })
 
 export default async function Home() {
@@ -17,8 +17,8 @@ export default async function Home() {
 			<main className="w-full">
 				<header
 					className={cn(
-						merriweather.className,
-						'mx-auto max-w-3xl px-6 py-20 text-3xl font-bold text-zinc-800',
+						montserrat.className,
+						'mx-auto max-w-4xl px-6 py-20 text-3xl font-bold text-zinc-800',
 						'dark:text-zinc-200',
 						'md:text-4xl',
 					)}
@@ -31,7 +31,7 @@ export default async function Home() {
 				</header>
 				<WritingList
 					writings={writings}
-					className="relative mx-auto mb-28 max-w-3xl px-6 md:px-0"
+					className="relative mx-auto mb-28 max-w-4xl px-6 md:px-0"
 				/>
 			</main>
 		</>

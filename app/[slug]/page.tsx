@@ -1,4 +1,5 @@
-import { Merriweather } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
+import Image from 'next/image'
 import { ReactElement } from 'react'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
@@ -7,15 +8,16 @@ import { getPostBySlug } from '@/lib/mdx'
 import { cn } from '@/lib/utils'
 
 type Metadata = {
-	title?: string
+	title: string
 	slug: string
-	description?: string
-	publishedAt?: string
+	description: string
+	publishedAt: string
+	images: string
 }
 
-const merriweather = Merriweather({
+const montserrat = Montserrat({
 	subsets: ['latin'],
-	weight: ['400', '700', '900'],
+	weight: ['100', '200', '300', '400', '700', '800'],
 })
 
 const getPageContent = async (slug: string) => {
@@ -44,7 +46,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	return (
 		<div className="mx-auto flex max-w-3xl items-start justify-evenly gap-8 py-16">
 			<SocialMediaShareButtons
-				className="hidden md:sticky md:top-10 md:mt-24 md:block md:w-64 md:flex-col "
+				className="hidden md:sticky md:top-24 md:mt-24 md:block md:w-64 md:flex-col "
 				slug={params.slug}
 				description={meta.description}
 			/>
@@ -52,16 +54,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
 				<div className="mb-2">
 					<h1
 						className={cn(
-							merriweather.className,
+							montserrat.className,
 							'mb-2 text-3xl font-bold',
 							'md:text-4xl',
 						)}
 					>
 						{meta.title}
 					</h1>
-					<p className="text-gray-500">
-						{getFormattedDate(meta.publishedAt as string)}
+					<p className="mb-4 text-gray-500">
+						{getFormattedDate(meta.publishedAt)}
 					</p>
+					<Image
+						src={meta.images}
+						alt={meta.title}
+						width={500}
+						height={500}
+						className="aspect-video w-full object-cover dark:brightness-75"
+					/>
 				</div>
 				<SocialMediaShareButtons
 					className="mt-2 flex flex-row items-center md:hidden"

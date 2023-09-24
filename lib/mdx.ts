@@ -10,6 +10,7 @@ type ContentType = {
 		title: string
 		description: string
 		publishedAt: string
+		images: string
 	}
 	content: React.ReactElement
 }
@@ -26,7 +27,11 @@ export const getPostBySlug = async (slug: string): Promise<ContentType> => {
 
 	const { frontmatter, content } = await compileMDX({
 		source: fileContent,
-		options: { parseFrontmatter: true },
+		options: {
+			parseFrontmatter: true,
+			scope: { slug: realSlug },
+			mdxOptions: { remarkPlugins: [], rehypePlugins: [] },
+		},
 	})
 
 	return {
@@ -35,6 +40,7 @@ export const getPostBySlug = async (slug: string): Promise<ContentType> => {
 			title: frontmatter.title as string,
 			description: frontmatter.description as string,
 			publishedAt: frontmatter.publishedAt as string,
+			images: frontmatter.images as string,
 		},
 		content,
 	}
@@ -54,6 +60,7 @@ export const getAllPostsMeta = async () => {
 				title: string
 				description: string
 				publishedAt: string
+				images: string
 			}
 		} = await getPostBySlug(file)
 		posts.push(meta)
