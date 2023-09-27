@@ -69,6 +69,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 						alt={meta.title}
 						width={500}
 						height={500}
+						quality={95}
 						className="aspect-video w-full object-cover dark:brightness-75"
 					/>
 				</div>

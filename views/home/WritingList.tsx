@@ -54,6 +54,7 @@ function WritingListItem(props: { writing: ContentType }) {
 						alt={writing.title as string}
 						width={500}
 						height={500}
+						quality={95}
 						className="aspect-video w-full object-cover dark:brightness-75"
 					/>
 				)}
