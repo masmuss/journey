@@ -4,7 +4,8 @@
 	"private": true,
 	"author": "M. Khoirul",
 	"scripts": {
-		"dev": "next dev",
+		"prepare": "husky install",
+		"dev": "cross-env NODE_OPTIONS='--inspect' next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
@@ -40,13 +41,22 @@
 		"typescript": "5.2.2"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.7.2",
+		"@commitlint/config-conventional": "^17.7.0",
 		"@tailwindcss/typography": "^0.5.10",
 		"@typescript-eslint/eslint-plugin": "^6.7.0",
+		"cross-env": "^7.0.3",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-import-resolver-typescript": "^3.6.0",
 		"eslint-plugin-import": "^2.28.1",
 		"eslint-plugin-prettier": "^5.0.0",
+		"husky": "^8.0.3",
 		"prettier": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.5.4"
+	},
+	"engines": {
+		"node": ">=14.0.0",
+		"yarn": ">=1.22.0",
+		"npm": "please-use-yarn"
 	}
 }
