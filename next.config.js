@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
 	options: {
@@ -16,19 +17,19 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
+				protocol: 'https',
 				hostname: 'images.unsplash.com',
 				port: '',
-				protocol: 'https',
 				pathname: '/**',
 			},
 			{
+				protocol: 'https',
 				hostname: 'unsplash.com',
 				port: '',
-				protocol: 'https',
 				pathname: '/**',
 			},
 		],
 	},
 }
 
-export default withMDX(nextConfig)
+module.exports = withMDX(nextConfig)

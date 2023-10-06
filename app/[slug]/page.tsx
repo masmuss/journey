@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	return (
 		<div className="mx-auto flex max-w-3xl items-start justify-evenly gap-8 py-16">
 			<SocialMediaShareButtons
-				className="hidden md:sticky md:top-24 md:mt-24 md:block md:w-64 md:flex-col "
+				className="hidden md:sticky md:top-24 md:mt-24 md:block md:w-64 md:flex-col"
 				slug={params.slug}
 				description={meta.description}
 			/>
@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 						width={500}
 						height={500}
 						quality={95}
-						className="aspect-video w-full object-cover dark:brightness-75"
+						className="h-auto w-full dark:brightness-75"
 					/>
 				</div>
 				<SocialMediaShareButtons
@@ -81,7 +81,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 				<article
 					className={cn(
 						'prose-lg prose-gray mx-auto mb-10 py-10',
-						' prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
+						'prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
 						'md:prose-xl',
 						'dark:text-zinc-200',
 					)}

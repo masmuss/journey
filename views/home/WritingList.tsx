@@ -29,8 +29,8 @@ export default function WritingList(props: {
 		<div
 			className={cn(
 				props.className,
-				'grid grid-cols-1',
-				'md:grid-cols-2',
+				'columns-1 [column-fill:_balance]',
+				'md:columns-2',
 			)}
 		>
 			{writings?.map((writing: ContentType) => {
@@ -45,7 +45,10 @@ function WritingListItem(props: { writing: ContentType }) {
 	return (
 		<Link
 			href={`/${writing.slug}`}
-			className="group block py-6 transition-colors duration-150 md:px-4"
+			className={cn(
+				'group block break-inside-avoid py-6 transition-colors duration-150',
+				'md:px-4',
+			)}
 		>
 			<div className="relative mb-4 w-full">
 				{writing.images && (
@@ -55,13 +58,14 @@ function WritingListItem(props: { writing: ContentType }) {
 						width={500}
 						height={500}
 						quality={95}
-						className="aspect-video w-full object-cover dark:brightness-75"
+						className="h-full w-full object-cover dark:brightness-75"
 					/>
 				)}
 				<div
 					className={cn(
 						'absolute bottom-0 left-0 h-full w-full bg-gradient-to-t from-black/70 to-transparent',
-						'transition-opacity duration-300 group-hover:opacity-50',
+						'transition-opacity duration-300',
+						'group-hover:opacity-50',
 					)}
 				/>
 			</div>
