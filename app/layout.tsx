@@ -1,13 +1,13 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Hind } from 'next/font/google'
+import './globals.css'
 
+import Footer from '@/components/partials/footer'
+import Navbar from '@/components/partials/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 
 import { LayoutProvider } from './LayoutProvider'
-import Footer from '../components/partials/footer'
-import Navbar from '../components/partials/navbar'
 
 const hind = Hind({
 	subsets: ['latin'],
