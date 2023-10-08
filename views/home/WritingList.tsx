@@ -47,7 +47,7 @@ function WritingListItem(props: { writing: ContentType }) {
 			href={`/${writing.slug}`}
 			className={cn(
 				'group block break-inside-avoid py-6 transition-colors duration-150',
-				'md:px-4',
+				'md:mb-4 md:px-4',
 			)}
 		>
 			<div className="relative mb-4 w-full">
@@ -58,7 +58,11 @@ function WritingListItem(props: { writing: ContentType }) {
 						width={500}
 						height={500}
 						quality={95}
-						className="h-full w-full object-cover dark:brightness-75"
+						className={cn(
+							'aspect-video w-full object-cover',
+							'md:aspect-auto md:h-full',
+							'dark:brightness-75',
+						)}
 					/>
 				)}
 				<div
