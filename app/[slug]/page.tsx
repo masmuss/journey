@@ -1,8 +1,8 @@
-import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
 import { ReactElement } from 'react'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
+import { montserrat } from '@/config/font'
 import getFormattedDate from '@/lib/getFormattedDate'
 import { getPostBySlug } from '@/lib/mdx'
 import { cn } from '@/lib/utils'
@@ -15,11 +15,6 @@ type Metadata = {
 	images: string
 }
 
-const montserrat = Montserrat({
-	subsets: ['latin'],
-	weight: ['100', '200', '300', '400', '700', '800'],
-})
-
 const getPageContent = async (slug: string) => {
 	const { meta, content } = await getPostBySlug(slug)
 	return { meta, content }
@@ -31,7 +26,20 @@ export async function generateMetadata({
 	params: { slug: string }
 }) {
 	const { meta } = await getPageContent(params.slug)
-	return { ...meta }
+	return {
+		title: `${meta.title} | Journey`,
+		description: meta.description,
+		openGraph: {
+			title: meta.title,
+			description: meta.description,
+			images: meta.images ? [meta.images] : [],
+		},
+		twitter: {
+			title: meta.title,
+			description: meta.description,
+			images: meta.images ? [meta.images] : [],
+		},
+	}
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -39,7 +47,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		content,
 		meta,
 	}: {
-		content: ReactElement
+		content: ReactElement | string | null
 		meta: Metadata
 	} = await getPageContent(params.slug)
 

@@ -1,10 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 
+import { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
-type ContentType = {
+type ContentType = Metadata & {
 	meta: {
 		slug: string
 		title: string

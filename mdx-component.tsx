@@ -1,15 +1,21 @@
+'use client'
 import type { MDXComponents } from 'mdx/types'
 
-// This file allows you to provide custom React components
-// to be used in MDX files. You can import and use any
-// React component you want, including components from
-// other libraries.
+import { montserrat } from './config/font'
 
-// This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
-		// Allows customizing built-in components, e.g. to add styling.
-		// h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
+		h1: ({ children }) => (
+			<h1 className={montserrat.className}>{children}</h1>
+		),
+		h2: ({ children }) => (
+			<h2 className={montserrat.className}>{children}</h2>
+		),
+		blockquote: ({ children }) => (
+			<blockquote className="prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed">
+				{children}
+			</blockquote>
+		),
 		...components,
 	}
 }

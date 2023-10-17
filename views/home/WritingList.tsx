@@ -1,9 +1,9 @@
 'use client'
 
-import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { montserrat } from '@/config/font'
 import getFormattedDate from '@/lib/getFormattedDate'
 import { cn } from '@/lib/utils'
 
@@ -14,11 +14,6 @@ type ContentType = {
 	description?: string
 	publishedAt?: string
 }
-
-const montserrat = Montserrat({
-	subsets: ['latin'],
-	weight: ['100', '200', '300', '400', '700', '800'],
-})
 
 export default function WritingList(props: {
 	writings: ContentType[]
@@ -73,26 +68,28 @@ function WritingListItem(props: { writing: ContentType }) {
 					)}
 				/>
 			</div>
-			<div className="mb-4">
-				<h3
+			<div>
+				<div className="mb-4">
+					<h3
+						className={cn(
+							montserrat.className,
+							'mb-1 text-center text-2xl font-semibold tracking-wide text-zinc-800',
+							'group-hover:text-cyan-600',
+							'dark:text-zinc-200',
+						)}
+					>
+						{writing.title}
+					</h3>
+				</div>
+				<p
 					className={cn(
-						montserrat.className,
-						'mb-1 text-center text-2xl font-semibold tracking-wide text-zinc-800',
+						'text-center text-sm text-gray-500',
 						'group-hover:text-cyan-600',
-						'dark:text-zinc-200',
 					)}
 				>
-					{writing.title}
-				</h3>
+					{getFormattedDate(writing.publishedAt as string)}
+				</p>
 			</div>
-			<p
-				className={cn(
-					'text-center text-sm text-gray-500',
-					'group-hover:text-cyan-600',
-				)}
-			>
-				{getFormattedDate(writing.publishedAt as string)}
-			</p>
 		</Link>
 	)
 }
