@@ -1,41 +1,12 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { montserrat } from '@/config/font'
 import getFormattedDate from '@/lib/getFormattedDate'
+import { ContentType } from '@/lib/types'
 import { cn } from '@/lib/utils'
 
-type ContentType = {
-	title?: string
-	slug: string
-	images?: string | string[]
-	description?: string
-	publishedAt?: string
-}
-
-export default function WritingList(props: {
-	writings: ContentType[]
-	className: string
-}) {
-	const { writings } = props
-	return (
-		<div
-			className={cn(
-				props.className,
-				'columns-1 [column-fill:_balance]',
-				'md:columns-2',
-			)}
-		>
-			{writings?.map((writing: ContentType) => {
-				return <WritingListItem writing={writing} key={writing.title} />
-			})}
-		</div>
-	)
-}
-
-function WritingListItem(props: { writing: ContentType }) {
+export default function WritingListItem(props: { writing: ContentType }) {
 	const { writing } = props
 	return (
 		<Link
@@ -48,8 +19,8 @@ function WritingListItem(props: { writing: ContentType }) {
 			<div className="relative mb-4 w-full">
 				{writing.images && (
 					<Image
-						src={writing.images as string}
-						alt={writing.title as string}
+						src={writing.images}
+						alt={writing.title}
 						width={500}
 						height={500}
 						quality={95}
@@ -87,7 +58,7 @@ function WritingListItem(props: { writing: ContentType }) {
 						'group-hover:text-cyan-600',
 					)}
 				>
-					{getFormattedDate(writing.publishedAt as string)}
+					{getFormattedDate(writing.publishedAt)}
 				</p>
 			</div>
 		</Link>

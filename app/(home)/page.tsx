@@ -2,7 +2,8 @@ import { Montserrat } from 'next/font/google'
 
 import { getAllPostsMeta } from '@/lib/mdx'
 import { cn } from '@/lib/utils'
-import WritingList from '@/views/home/WritingList'
+
+import WritingList from './_components/WritingList'
 
 const montserrat = Montserrat({
 	subsets: ['latin'],

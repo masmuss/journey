@@ -2,8 +2,21 @@
 	"semi": false,
 	"singleQuote": true,
 	"useTabs": true,
-	"tabWidth": 4,
 	"bracketSpacing": true,
 	"endOfLine": "lf",
+	"overrides": [
+		{
+			"files": "*.ts",
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.tsx",
+			"options": {
+				"tabWidth": 4
+			}
+		}
+	],
 	"plugins": ["prettier-plugin-tailwindcss"]
 }

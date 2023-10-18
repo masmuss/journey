@@ -5,26 +5,24 @@ import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButto
 import { montserrat } from '@/config/font'
 import getFormattedDate from '@/lib/getFormattedDate'
 import { getPostBySlug } from '@/lib/mdx'
+import { ContentType } from '@/lib/types'
 import { cn } from '@/lib/utils'
-
-type Metadata = {
-	title: string
-	slug: string
-	description: string
-	publishedAt: string
-	images: string
-}
 
 const getPageContent = async (slug: string) => {
 	const { meta, content } = await getPostBySlug(slug)
 	return { meta, content }
 }
 
-export async function generateMetadata({
-	params,
-}: {
+type MetadataProps = {
 	params: { slug: string }
-}) {
+}
+
+type WritingPageContent = {
+	content: ReactElement | string | null
+	meta: ContentType
+}
+
+export async function generateMetadata({ params }: MetadataProps) {
 	const { meta } = await getPageContent(params.slug)
 	return {
 		title: `${meta.title} | Journey`,
@@ -42,14 +40,10 @@ export async function generateMetadata({
 	}
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-	const {
-		content,
-		meta,
-	}: {
-		content: ReactElement | string | null
-		meta: Metadata
-	} = await getPageContent(params.slug)
+export default async function WritingPage({ params }: MetadataProps) {
+	const { content, meta }: WritingPageContent = await getPageContent(
+		params.slug,
+	)
 
 	return (
 		<div className="mx-auto flex max-w-3xl items-start justify-evenly gap-8 py-16">
