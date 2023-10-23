@@ -84,8 +84,9 @@ export default async function WritingPage({ params }: MetadataProps) {
 					className={cn(
 						'prose-lg prose-gray mx-auto mb-10 py-10',
 						'prose-blockquote:border-l-2 prose-blockquote:border-zinc-700 prose-blockquote:font-serif prose-blockquote:text-xl prose-blockquote:font-semibold prose-blockquote:italic md:prose-blockquote:text-2xl md:prose-blockquote:leading-relaxed',
+						'prose-a:text-blue-600',
 						'md:prose-xl',
-						'dark:text-zinc-200',
+						'dark:text-zinc-200 dark:prose-a:text-blue-400',
 					)}
 				>
 					{content}
