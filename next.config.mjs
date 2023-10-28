@@ -1,18 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-
-const withMDX = createMDX({
-	extension: /\.mdx?$/,
-	options: {
-		providerImportSource: '@mdx-js/react',
-		remarkPlugins: [remarkGfm],
-		rehypePlugins: [],
-	},
-})
+import { withContentlayer } from 'next-contentlayer'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	reactStrictMode: true,
+	swcMinify: true,
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	images: {
 		remotePatterns: [
@@ -32,4 +23,4 @@ const nextConfig = {
 	},
 }
 
-export default withMDX(nextConfig)
+export default withContentlayer(nextConfig)
