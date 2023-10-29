@@ -1,12 +1,10 @@
-import { format, parseISO } from 'date-fns'
 import { Metadata } from 'next'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
 import { montserrat } from '@/config/font'
-import { cn } from '@/lib/utils'
+import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
 import { allPosts } from 'contentlayer/generated'
 
 import { MdxContent } from './_components/MdxContent'
@@ -48,44 +46,34 @@ export default async function WritingPage({
 	if (!post) notFound()
 
 	return (
-		<div className="mx-auto flex max-w-3xl items-start justify-evenly gap-8 py-16">
-			<SocialMediaShareButtons
-				className="hidden md:sticky md:top-24 md:mt-24 md:block md:w-64 md:flex-col"
-				slug={params.slug}
-				description={post.description}
-			/>
-			<div className="mx-auto max-w-2xl px-10 md:px-0">
-				<div className="mb-2">
+		<div className="mx-auto flex max-w-4xl items-start justify-evenly gap-8 py-16">
+			<div className="mx-auto max-w-4xl px-6">
+				<div className="md:mb-2 md:text-center">
 					<h1
 						className={cn(
 							montserrat.className,
-							'mb-2 text-3xl font-bold',
-							'md:text-4xl',
+							'mb-4 text-3xl font-bold',
+							'md:mb-8 md:text-5xl',
 						)}
 					>
 						{post.title}
 					</h1>
-					<time
-						dateTime={post.publishedAt}
-						className="mb-8 text-gray-500"
-					>
-						{format(parseISO(post.publishedAt), 'LLLL d, yyyy')}
-					</time>
-					<Image
-						src={post.images}
-						alt={post.title}
-						width={500}
-						height={500}
-						quality={95}
-						className="mt-4 h-auto w-full dark:brightness-75"
-					/>
+					<div className="block space-x-2 text-gray-500">
+						<time dateTime={post.publishedAt}>
+							{getFormattedDate(post.publishedAt)}
+						</time>
+						<span>&mdash;</span>
+						<span>{readTimeCount(post.body.raw)} min read</span>
+					</div>
 				</div>
 				<SocialMediaShareButtons
-					className="mt-2 flex flex-row items-center md:hidden"
+					className="mt-6 flex flex-row items-center md:mt-4 md:justify-center"
 					slug={params.slug}
 					description={post.description}
 				/>
-				<MdxContent code={post.body.code} />
+				<article className="md:mt-8">
+					<MdxContent code={post.body.code} />
+				</article>
 			</div>
 		</div>
 	)

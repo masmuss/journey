@@ -13,7 +13,6 @@ import {
 	TwitterShareButton,
 	WhatsappShareButton,
 } from 'next-share'
-import React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -29,6 +28,8 @@ export default function SocialMediaShareButtons({
 	description,
 }: SocialMediaShareButtonsProps) {
 	const url: string = `https://journey.khoirul.me/${slug}`
+	const iconClassNames: string =
+		'h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6'
 
 	return (
 		<div
@@ -37,26 +38,25 @@ export default function SocialMediaShareButtons({
 				className,
 			)}
 		>
-			<h3 className="hidden opacity-50 md:block md:text-center">share</h3>
-			<div className="mt-6 flex flex-row items-center justify-center gap-4 md:flex-col">
+			<div className="flex flex-row items-center justify-center gap-4">
 				<FacebookShareButton url={url} quote={description}>
-					<FacebookIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+					<FacebookIcon className={iconClassNames} />
 				</FacebookShareButton>
 				<FacebookMessengerShareButton url={url} appId={''}>
-					<MessageCircleIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+					<MessageCircleIcon className={iconClassNames} />
 				</FacebookMessengerShareButton>
 				<TelegramShareButton url={url} title={description}>
-					<SendIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+					<SendIcon className={iconClassNames} />
 				</TelegramShareButton>
 				<TwitterShareButton url={url} title={description}>
-					<TwitterIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+					<TwitterIcon className={iconClassNames} />
 				</TwitterShareButton>
 				<WhatsappShareButton
 					url={url}
 					title={description}
-					separator=":: "
+					separator=" "
 				>
-					<PhoneIcon className="h-4 w-4 opacity-60 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+					<PhoneIcon className={iconClassNames} />
 				</WhatsappShareButton>
 			</div>
 		</div>

@@ -1,10 +1,10 @@
-import { withContentlayer } from 'next-contentlayer'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withContentlayer } = require('next-contentlayer')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	images: {
 		remotePatterns: [
 			{
@@ -23,4 +23,4 @@ const nextConfig = {
 	},
 }
 
-export default withContentlayer(nextConfig)
+module.exports = withContentlayer(nextConfig)

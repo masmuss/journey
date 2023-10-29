@@ -15,7 +15,7 @@ export function MdxContent({ code }: { code: string }) {
 			className={cn(
 				'prose-lg prose-gray mx-auto mb-10 py-10',
 				'md:prose-xl',
-				'dark:text-zinc-200 dark:prose-a:text-blue-400',
+				'dark:text-zinc-200',
 			)}
 		>
 			<Component components={{ Image, ...mdxContentComponents }} />
