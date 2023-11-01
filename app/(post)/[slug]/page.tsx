@@ -27,12 +27,12 @@ export const generateMetadata = ({ params }: PostPageProps): Metadata => {
 		openGraph: {
 			title: post.title,
 			description: post.description,
-			images: [post.images],
+			images: [post.images ? post.images : ''],
 		},
 		twitter: {
 			title: post.title,
 			description: post.description,
-			images: [post.images],
+			images: [post.images ? post.images : ''],
 		},
 	}
 }
