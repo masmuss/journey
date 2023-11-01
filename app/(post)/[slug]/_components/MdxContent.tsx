@@ -3,7 +3,7 @@
 
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-import mdxContentComponents from './mdxContentComponents'
+import * as mdxContentComponents from './mdxContentComponents'
 
 import { cn } from '@/lib/utils'
 

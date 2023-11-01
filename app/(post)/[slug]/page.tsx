@@ -27,12 +27,12 @@ export const generateMetadata = ({ params }: PostPageProps): Metadata => {
 		openGraph: {
 			title: post.title,
 			description: post.description,
-			images: [post.images],
+			images: [post.images ? post.images : ''],
 		},
 		twitter: {
 			title: post.title,
 			description: post.description,
-			images: [post.images],
+			images: [post.images ? post.images : ''],
 		},
 	}
 }
@@ -58,7 +58,7 @@ export default async function WritingPage({
 					>
 						{post.title}
 					</h1>
-					<div className="block space-x-2 text-gray-500">
+					<div className="block space-x-2 text-zinc-600 dark:text-gray-400">
 						<time dateTime={post.publishedAt}>
 							{getFormattedDate(post.publishedAt)}
 						</time>
