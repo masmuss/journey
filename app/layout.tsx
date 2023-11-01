@@ -24,13 +24,23 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="id" className="h-full">
-			<body className={cn(hind.className, 'relative scroll-smooth')}>
+			<body
+				className={cn(
+					hind.className,
+					'relative scroll-smooth bg-zinc-200/70 dark:bg-zinc-950',
+				)}
+			>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
 					themes={['light', 'dark', 'system']}
 				>
+					<div className="fixed inset-0 -z-50 flex justify-center sm:px-8">
+						<div className="flex w-full max-w-7xl lg:px-8">
+							<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
+						</div>
+					</div>
 					<Navbar />
 					{children}
 					<Footer />

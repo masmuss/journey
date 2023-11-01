@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { montserrat } from '@/config/font'
 import { cn } from '@/lib/utils'
 
-function a({ href, children }: React.HTMLProps<HTMLAnchorElement>) {
+export function a({ href, children }: React.HTMLProps<HTMLAnchorElement>) {
 	if (href?.startsWith('/')) {
 		return (
 			<Link
@@ -38,11 +38,11 @@ function a({ href, children }: React.HTMLProps<HTMLAnchorElement>) {
 	)
 }
 
-function p({ children }: React.HTMLProps<HTMLParagraphElement>) {
+export function p({ children }: React.HTMLProps<HTMLParagraphElement>) {
 	return <p className="mb-6">{children}</p>
 }
 
-function h1({ children }: React.HTMLProps<HTMLHeadingElement>) {
+export function h1({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	return (
 		<h1 className={cn(montserrat.className, 'text-2xl font-semibold')}>
 			{children}
@@ -50,7 +50,7 @@ function h1({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	)
 }
 
-function h2({ children }: React.HTMLProps<HTMLHeadingElement>) {
+export function h2({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	return (
 		<h2 className={cn(montserrat.className, 'text-xl font-semibold')}>
 			{children}
@@ -58,11 +58,13 @@ function h2({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	)
 }
 
-function blockquote({ children }: React.HTMLProps<HTMLQuoteElement>) {
+export function blockquote({ children }: React.HTMLProps<HTMLQuoteElement>) {
 	return (
 		<blockquote
 			className={cn(
-				'rounded-md bg-zinc-200 px-4 pb-px pt-4 text-lg font-medium italic leading-relaxed dark:border-zinc-500 dark:bg-zinc-900 md:px-6 md:py-px md:pt-6 md:text-xl',
+				'rounded-md border border-zinc-300 bg-zinc-200 px-4 pb-px pt-4 text-lg font-medium italic leading-relaxed',
+				'md:rounded-xl md:px-6 md:py-px md:pt-6 md:text-xl',
+				'dark:border-zinc-800 dark:bg-zinc-950',
 			)}
 		>
 			<svg
@@ -78,13 +80,3 @@ function blockquote({ children }: React.HTMLProps<HTMLQuoteElement>) {
 		</blockquote>
 	)
 }
-
-const mdxContentComponents = {
-	h1,
-	h2,
-	a,
-	p,
-	blockquote,
-}
-
-export default mdxContentComponents

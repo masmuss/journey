@@ -58,7 +58,7 @@ export default async function WritingPage({
 					>
 						{post.title}
 					</h1>
-					<div className="block space-x-2 text-gray-500">
+					<div className="block space-x-2 text-zinc-600 dark:text-gray-400">
 						<time dateTime={post.publishedAt}>
 							{getFormattedDate(post.publishedAt)}
 						</time>
