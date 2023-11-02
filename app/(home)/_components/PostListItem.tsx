@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { AllTypes } from '@/.contentlayer/generated'
 import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
 
-export default function PostListItem(props: { post: AllTypes }) {
+export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 	const { post } = props
 	return (
 		<Link
 			href={post.url}
-			className="group relative block py-6 pl-8 transition sm:pl-32 md:py-10"
+			className="group relative block py-6 pl-8 transition sm:pl-32"
 		>
 			<div
 				className={cn(
@@ -30,7 +30,7 @@ export default function PostListItem(props: { post: AllTypes }) {
 			>
 				<time
 					className={cn(
-						'left-0 z-10 mb-3 inline-flex h-6 w-auto translate-y-0.5 items-center justify-center rounded-full bg-blue-100 px-2 py-2 text-xs font-semibold text-blue-600/80 md:w-20',
+						'left-0 z-10 mb-3 inline-flex h-5 w-auto translate-y-0.5 items-center justify-center rounded-full bg-blue-100 px-2 py-2 text-xs text-blue-600/80 md:w-20',
 						'sm:absolute sm:mb-0',
 						'dark:bg-zinc-800 dark:text-blue-500/80',
 					)}
@@ -39,7 +39,7 @@ export default function PostListItem(props: { post: AllTypes }) {
 				</time>
 				<div
 					className={cn(
-						'z-10 text-xl font-bold text-zinc-900 dark:text-zinc-200',
+						'z-10 text-lg font-bold text-zinc-900 dark:text-zinc-200',
 						'group-hover:text-blue-600/80 dark:group-hover:text-blue-400',
 					)}
 				>
@@ -48,14 +48,15 @@ export default function PostListItem(props: { post: AllTypes }) {
 			</div>
 			<div
 				className={cn(
-					'z-10 tracking-wide text-zinc-500',
+					'z-10 text-base tracking-wide text-zinc-500',
+					'md:text-sm',
 					'group-hover:text-blue-600/80',
 					'dark:group-hover:text-blue-400',
 				)}
 			>
 				{post.description}
 			</div>
-			<div className={cn('z-10 mt-4 text-sm text-zinc-500')}>
+			<div className={cn('z-10 mt-4 text-xs text-zinc-500')}>
 				{readTimeCount(post.body.raw)} min read
 			</div>
 		</Link>

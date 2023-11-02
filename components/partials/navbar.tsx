@@ -11,7 +11,7 @@ const robotoMono = Roboto_Mono({
 
 export default function Navbar() {
 	return (
-		<nav className="mx-auto flex w-full items-center justify-between px-6 py-8 md:max-w-5xl md:px-16">
+		<nav className="mx-auto flex w-full items-center justify-between px-6 py-8 md:max-w-4xl md:px-16">
 			<Link
 				href={'/'}
 				className={cn(robotoMono.className, 'text-3xl font-extrabold')}

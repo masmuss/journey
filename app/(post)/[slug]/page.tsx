@@ -52,8 +52,8 @@ export default async function WritingPage({
 					<h1
 						className={cn(
 							montserrat.className,
-							'mb-4 text-3xl font-bold',
-							'md:mb-8 md:text-5xl',
+							'mb-4 text-2xl font-bold',
+							'md:mb-6 md:text-4xl',
 						)}
 					>
 						{post.title}
@@ -67,7 +67,7 @@ export default async function WritingPage({
 					</div>
 				</div>
 				<SocialMediaShareButtons
-					className="mt-6 flex flex-row items-center md:mt-4 md:justify-center"
+					className="mt-4 flex flex-row items-center md:mt-4 md:justify-center"
 					slug={params.slug}
 					description={post.description}
 				/>

@@ -3,6 +3,7 @@ import './globals.css'
 
 import Footer from '@/components/partials/footer'
 import Navbar from '@/components/partials/navbar'
+import ScrollToTopButton from '@/components/partials/ScrollToTopButton'
 import { ThemeProvider } from '@/components/theme-provider'
 import { hind } from '@/config/font'
 import { cn } from '@/lib/utils'
@@ -37,13 +38,14 @@ export default function RootLayout({
 					themes={['light', 'dark', 'system']}
 				>
 					<div className="fixed inset-0 -z-50 flex justify-center sm:px-8">
-						<div className="flex w-full max-w-7xl lg:px-8">
+						<div className="flex w-full max-w-5xl lg:px-8">
 							<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
 						</div>
 					</div>
 					<Navbar />
 					{children}
 					<Footer />
+					<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
 				</ThemeProvider>
 			</body>
 		</html>
