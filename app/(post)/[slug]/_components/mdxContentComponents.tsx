@@ -62,7 +62,7 @@ export function blockquote({ children }: React.HTMLProps<HTMLQuoteElement>) {
 	return (
 		<blockquote
 			className={cn(
-				'rounded-md border border-zinc-300 bg-zinc-200 px-4 pb-px pt-4 text-lg font-medium italic leading-relaxed',
+				'rounded-lg border border-zinc-300 bg-zinc-200 px-4 pb-px pt-4 text-base font-medium italic leading-relaxed',
 				'md:rounded-xl md:px-6 md:py-px md:pt-6 md:text-lg',
 				'dark:border-zinc-800 dark:bg-zinc-950',
 			)}
