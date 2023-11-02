@@ -30,7 +30,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 			>
 				<time
 					className={cn(
-						'left-0 z-10 mb-3 inline-flex h-5 w-auto translate-y-0.5 items-center justify-center rounded-full bg-blue-100 px-2 py-2 text-xs text-blue-600/80 md:w-20',
+						'left-0 z-10 mb-3 inline-flex h-5 w-auto translate-y-0.5 items-center justify-center rounded-full bg-blue-100 px-2 py-2 text-[10px] text-blue-600/80 md:w-20',
 						'sm:absolute sm:mb-0',
 						'dark:bg-zinc-800 dark:text-blue-500/80',
 					)}
@@ -48,8 +48,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 			</div>
 			<div
 				className={cn(
-					'z-10 text-base tracking-wide text-zinc-500',
-					'md:text-sm',
+					'z-10 text-sm tracking-wide text-zinc-500',
 					'group-hover:text-blue-600/80',
 					'dark:group-hover:text-blue-400',
 				)}
