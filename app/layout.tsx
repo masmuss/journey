@@ -37,7 +37,7 @@ export default function RootLayout({
 					enableSystem
 					themes={['light', 'dark', 'system']}
 				>
-					<div className="fixed inset-0 -z-50 flex justify-center sm:px-8">
+					<div className="absolute inset-0 top-0 -z-50 flex h-full justify-center sm:px-8">
 						<div className="flex w-full max-w-5xl lg:px-8">
 							<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
 						</div>
@@ -45,7 +45,7 @@ export default function RootLayout({
 					<Navbar />
 					{children}
 					<Footer />
-					<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
+					<ScrollToTopButton className="fixed bottom-10 right-10 z-50 md:bottom-16 md:right-16" />
 				</ThemeProvider>
 			</body>
 		</html>

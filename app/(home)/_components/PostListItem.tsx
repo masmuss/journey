@@ -39,7 +39,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 				</time>
 				<div
 					className={cn(
-						'z-10 text-lg font-bold text-zinc-900 dark:text-zinc-200',
+						'z-10 text-base font-bold text-zinc-900 dark:text-zinc-200',
 						'group-hover:text-blue-600/80 dark:group-hover:text-blue-400',
 					)}
 				>

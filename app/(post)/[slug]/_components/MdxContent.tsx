@@ -13,8 +13,8 @@ export function MdxContent({ code }: Readonly<{ code: string }>) {
 	return (
 		<article
 			className={cn(
-				'prose-base prose-gray mx-auto mb-10 max-w-2xl py-10',
-				'md:prose-lg',
+				'prose-sm prose-gray mx-auto mb-10 max-w-2xl py-10',
+				'md:prose-base',
 				'dark:text-zinc-200',
 			)}
 		>
