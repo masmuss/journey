@@ -14,7 +14,7 @@ export function MdxContent({ code }: Readonly<{ code: string }>) {
 		<article
 			className={cn(
 				'prose-sm prose-gray mx-auto mb-10 max-w-2xl py-10',
-				'md:prose-base',
+				'md:prose-lg',
 				'dark:text-zinc-200',
 			)}
 		>
