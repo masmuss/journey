@@ -45,7 +45,7 @@ export default function RootLayout({
 					<Navbar />
 					{children}
 					<Footer />
-					<ScrollToTopButton className="fixed bottom-10 right-10 z-50 md:bottom-16 md:right-16" />
+					<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
 				</ThemeProvider>
 			</body>
 		</html>
