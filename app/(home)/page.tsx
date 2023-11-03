@@ -1,3 +1,5 @@
+import Balancer from 'react-wrap-balancer'
+
 import { montserrat } from '@/config/font'
 import { cn } from '@/lib/utils'
 import { allPosts } from 'contentlayer/generated'
@@ -15,8 +17,10 @@ export default async function Home() {
 					'md:text-center md:text-3xl md:leading-normal',
 				)}
 			>
-				Setiap tulisan merupakan dunia tersendiri, yang terapung-apung
-				antara dunia kenyataan dan dunia impian
+				<Balancer>
+					Setiap tulisan merupakan dunia tersendiri, yang
+					terapung-apung antara dunia kenyataan dan dunia impian
+				</Balancer>
 				<span className="mt-6 block text-xs font-normal italic">
 					&mdash; Rumah Kaca (1988), Pramoedya Ananta Toer
 				</span>

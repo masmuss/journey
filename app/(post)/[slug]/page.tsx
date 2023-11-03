@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
+import Balancer from 'react-wrap-balancer'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
 import { montserrat } from '@/config/font'
@@ -37,9 +38,9 @@ export const generateMetadata = ({ params }: PostPageProps): Metadata => {
 	}
 }
 
-export default async function WritingPage({
+export default async function PostPage({
 	params,
-}: PostPageProps): Promise<ReactElement> {
+}: Readonly<PostPageProps>): Promise<ReactElement> {
 	const post = allPosts.find(
 		(post) => post._raw.flattenedPath === params.slug,
 	)
@@ -52,8 +53,9 @@ export default async function WritingPage({
 					<h1
 						className={cn(
 							montserrat.className,
-							'mb-4 text-2xl font-bold',
-							'md:mb-6 md:text-4xl',
+							'mb-px text-2xl font-bold',
+							'md:mb-2 md:text-3xl',
+							'lg:text-4xl',
 						)}
 					>
 						{post.title}
@@ -72,7 +74,9 @@ export default async function WritingPage({
 					description={post.description}
 				/>
 				<article className="md:mt-8">
-					<MdxContent code={post.body.code} />
+					<Balancer>
+						<MdxContent code={post.body.code} />
+					</Balancer>
 				</article>
 			</div>
 		</div>

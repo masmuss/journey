@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Balancer } from 'react-wrap-balancer'
 
 import { AllTypes } from '@/.contentlayer/generated'
 import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
@@ -53,7 +54,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 					'dark:group-hover:text-blue-400',
 				)}
 			>
-				{post.description}
+				<Balancer>{post.description}</Balancer>
 			</div>
 			<div className={cn('z-10 mt-4 text-xs text-zinc-500')}>
 				{readTimeCount(post.body.raw)} min read

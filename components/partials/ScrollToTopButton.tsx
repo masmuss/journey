@@ -31,7 +31,7 @@ export default function ScrollToTopButton(
 		<div className={props.className}>
 			<Button
 				className={cn(
-					'border border-zinc-300 bg-zinc-100 px-2 py-2 shadow-md transition-all hover:scale-110 [&>svg]:text-zinc-950',
+					'rounded-full border border-zinc-300 bg-zinc-100 px-2 py-2 shadow-md transition-all duration-500 hover:scale-110 [&>svg]:text-zinc-950',
 					showTopBtn
 						? 'translate-y-0 opacity-100'
 						: 'translate-y-96 opacity-0',

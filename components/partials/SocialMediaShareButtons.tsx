@@ -26,19 +26,14 @@ export default function SocialMediaShareButtons({
 	className,
 	slug,
 	description,
-}: SocialMediaShareButtonsProps) {
+}: Readonly<SocialMediaShareButtonsProps>) {
 	const url: string = `https://journey.khoirul.me/${slug}`
 	const iconClassNames: string =
-		'h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6'
+		'h-4 w-4 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6'
 
 	return (
-		<div
-			className={cn(
-				'flex items-center gap-6 md:justify-center',
-				className,
-			)}
-		>
-			<div className="flex flex-row items-center justify-center gap-4">
+		<div className={cn('flex items-center md:justify-center', className)}>
+			<div className="flex flex-row items-center justify-center gap-3 md:gap-4">
 				<FacebookShareButton url={url} quote={description}>
 					<FacebookIcon className={iconClassNames} />
 				</FacebookShareButton>

@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/order
 import type { Metadata } from 'next'
 import './globals.css'
+
+import { Provider as WrapBalancerProvider } from 'react-wrap-balancer'
 
 import Footer from '@/components/partials/footer'
 import Navbar from '@/components/partials/navbar'
@@ -20,9 +23,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: {
+}: Readonly<{
 	children: React.ReactNode
-}) {
+}>) {
 	return (
 		<html lang="id" className="h-full">
 			<body
@@ -37,15 +40,17 @@ export default function RootLayout({
 					enableSystem
 					themes={['light', 'dark', 'system']}
 				>
-					<div className="absolute inset-0 top-0 -z-50 flex h-full justify-center sm:px-8">
-						<div className="flex w-full max-w-5xl lg:px-8">
-							<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
+					<WrapBalancerProvider>
+						<div className="absolute inset-0 top-0 -z-50 flex h-full justify-center sm:px-8">
+							<div className="flex w-full max-w-5xl lg:px-8">
+								<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
+							</div>
 						</div>
-					</div>
-					<Navbar />
-					{children}
-					<Footer />
-					<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
+						<Navbar />
+						{children}
+						<Footer />
+						<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
+					</WrapBalancerProvider>
 				</ThemeProvider>
 			</body>
 		</html>
