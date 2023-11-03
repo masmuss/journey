@@ -1,4 +1,4 @@
-import Balancer from 'react-wrap-balancer'
+import { Balancer } from 'react-wrap-balancer'
 
 import { montserrat } from '@/config/font'
 import { cn } from '@/lib/utils'

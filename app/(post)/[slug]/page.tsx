@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
-import Balancer from 'react-wrap-balancer'
+import { Balancer } from 'react-wrap-balancer'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
 import { montserrat } from '@/config/font'
