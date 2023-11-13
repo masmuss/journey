@@ -16,7 +16,7 @@ export type Post = {
   title: string
   description: string
   publishedAt: IsoDateTimeString
-  images?: string | undefined
+  images: string
   /** MDX file body */
   body: MDX
   url: string

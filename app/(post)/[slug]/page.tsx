@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
 import { Balancer } from 'react-wrap-balancer'
@@ -28,12 +29,12 @@ export const generateMetadata = ({ params }: PostPageProps): Metadata => {
 		openGraph: {
 			title: post.title,
 			description: post.description,
-			images: [post.images ? post.images : ''],
+			images: post.images,
 		},
 		twitter: {
 			title: post.title,
 			description: post.description,
-			images: [post.images ? post.images : ''],
+			images: post.images,
 		},
 	}
 }
@@ -49,35 +50,48 @@ export default async function PostPage({
 	return (
 		<div className="mx-auto flex max-w-4xl items-start justify-evenly gap-8 py-16">
 			<div className="mx-auto max-w-4xl px-6">
-				<div className="md:mb-2 md:text-center">
+				<div className="mb-4 block space-x-2 border-l-4 pl-3 text-sm text-zinc-600 dark:text-gray-400 md:text-base">
+					<time dateTime={post.publishedAt}>
+						{getFormattedDate(post.publishedAt)}
+					</time>
+					<span>&mdash;</span>
+					<span>{readTimeCount(post.body.raw)} min read</span>
+				</div>
+				<Image
+					src={post.images}
+					alt={post.title}
+					width={500}
+					height={300}
+					decoding="async"
+					loading="lazy"
+					className="h-full w-full scale-100 rounded-lg bg-zinc-300 object-cover blur-0 transition duration-500 dark:bg-zinc-700"
+				/>
+				<div className="my-4 md:m-2 md:text-center">
 					<h1
 						className={cn(
 							montserrat.className,
-							'mb-px text-2xl font-bold',
+							'mt-6 text-4xl font-bold tracking-tight text-zinc-800',
 							'md:mb-2 md:text-3xl',
 							'lg:text-4xl',
+							'dark:text-zinc-100',
 						)}
 					>
 						{post.title}
 					</h1>
-					<div className="block space-x-2 text-sm text-zinc-600 dark:text-gray-400 md:text-base">
-						<time dateTime={post.publishedAt}>
-							{getFormattedDate(post.publishedAt)}
-						</time>
-						<span>&mdash;</span>
-						<span>{readTimeCount(post.body.raw)} min read</span>
-					</div>
 				</div>
-				<SocialMediaShareButtons
-					className="mt-4 flex flex-row items-center md:mt-4 md:justify-center"
-					slug={params.slug}
-					description={post.description}
-				/>
 				<article className="md:mt-8">
 					<Balancer>
 						<MdxContent code={post.body.code} />
 					</Balancer>
 				</article>
+				<div className="flex gap-2">
+					<span>Share :</span>
+					<SocialMediaShareButtons
+						className="flex gap-3"
+						slug={params.slug}
+						description={post.description}
+					/>
+				</div>
 			</div>
 		</div>
 	)
