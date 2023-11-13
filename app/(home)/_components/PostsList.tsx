@@ -19,7 +19,7 @@ export default function PostsList(props: WritingListPropsType) {
 	})
 
 	return (
-		<div className={cn(props.className, '')}>
+		<div className={cn(props.className)}>
 			{posts.map((post) => (
 				<PostListItem post={post} key={post._id} />
 			))}

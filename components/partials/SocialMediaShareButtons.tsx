@@ -29,7 +29,7 @@ export default function SocialMediaShareButtons({
 }: Readonly<SocialMediaShareButtonsProps>) {
 	const url: string = `https://journey.khoirul.me/${slug}`
 	const iconClassNames: string =
-		'h-4 w-4 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-5 md:w-5'
+		'h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-5 md:w-5'
 
 	return (
 		<div className={cn(className)}>

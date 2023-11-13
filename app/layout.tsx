@@ -41,11 +41,6 @@ export default function RootLayout({
 					themes={['light', 'dark', 'system']}
 				>
 					<WrapBalancerProvider>
-						<div className="absolute inset-0 top-0 -z-50 flex h-full justify-center sm:px-8">
-							<div className="flex w-full max-w-5xl lg:px-8">
-								<div className="w-full bg-zinc-100 ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-400/20" />
-							</div>
-						</div>
 						<Navbar />
 						{children}
 						<Footer />

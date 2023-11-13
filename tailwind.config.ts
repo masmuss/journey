@@ -20,6 +20,9 @@ module.exports = {
 			fontSize: {
 				xxs: '0.625rem',
 			},
+			aspectRatio: {
+				'4/3': '4 / 3',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

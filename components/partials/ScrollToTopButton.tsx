@@ -31,12 +31,13 @@ export default function ScrollToTopButton(
 		<div className={props.className}>
 			<Button
 				className={cn(
-					'rounded-full border border-zinc-300 bg-zinc-100 px-2 py-2 shadow-md transition-all duration-500 hover:scale-110 [&>svg]:text-zinc-950',
+					'rounded-full border border-zinc-300 bg-zinc-200/70 px-2 py-2 shadow-md transition-all duration-500 hover:scale-110 [&>svg]:text-zinc-950',
 					showTopBtn
 						? 'translate-y-0 opacity-100'
 						: 'translate-y-96 opacity-0',
-					'dark:border-zinc-700 dark:bg-zinc-800 [&>svg]:dark:text-zinc-100',
+					'dark:border-zinc-700 dark:bg-zinc-950 [&>svg]:dark:text-zinc-100',
 				)}
+				size="icon"
 				onClick={goToTop}
 			>
 				<ArrowUp className="h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />

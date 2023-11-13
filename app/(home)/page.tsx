@@ -27,7 +27,11 @@ export default async function Home() {
 			</header>
 			<PostsList
 				posts={allPosts}
-				className="relative mx-auto mb-28 max-w-lg px-6 md:px-0"
+				className={cn(
+					'mx-auto mb-32 grid grid-cols-1 gap-8 gap-y-16',
+					'md:max-w-5xl md:grid-cols-3',
+					'2xl:grid-cols-4',
+				)}
 			/>
 		</main>
 	)
