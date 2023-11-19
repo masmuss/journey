@@ -9,10 +9,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 	return (
 		<Link href={post.url} className="w-full">
 			<div
-				className={cn(
-					'group relative mb-5 aspect-video overflow-hidden',
-					'md:aspect-4/3',
-				)}
+				className={cn('group relative mb-5 aspect-4/3 overflow-hidden')}
 			>
 				<Image
 					alt={post.title}
@@ -22,8 +19,7 @@ export default function PostListItem(props: Readonly<{ post: AllTypes }>) {
 					decoding="async"
 					loading="lazy"
 					className={cn(
-						'aspect-video object-cover brightness-95 transition-all duration-300',
-						'md:aspect-4/3',
+						'aspect-4/3 object-cover brightness-95 transition-all duration-300',
 						'dark:brightness-50',
 						'group-hover:scale-110 group-hover:brightness-75',
 						'dark:group-hover:brightness-90',

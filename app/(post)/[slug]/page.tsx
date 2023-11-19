@@ -88,7 +88,7 @@ export default async function PostPage({
 					height={300}
 					decoding="async"
 					loading="lazy"
-					className="mt-8 aspect-video w-full bg-zinc-300 object-cover blur-0 transition duration-500 dark:bg-zinc-700"
+					className="mt-8 aspect-4/3 w-full bg-zinc-300 object-cover blur-0 transition duration-500 dark:bg-zinc-700"
 				/>
 				<article className="max-w-4xl px-6 md:mt-2">
 					<Balancer>

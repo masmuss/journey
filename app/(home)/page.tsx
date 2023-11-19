@@ -29,7 +29,8 @@ export default async function Home() {
 				posts={allPosts}
 				className={cn(
 					'mx-auto mb-32 grid grid-cols-1 gap-8 gap-y-16',
-					'md:max-w-5xl md:grid-cols-3',
+					'md:max-w-2xl md:grid-cols-2',
+					'lg:max-w-5xl lg:grid-cols-3',
 					'2xl:grid-cols-4',
 				)}
 			/>
