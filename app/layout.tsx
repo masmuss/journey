@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+import { Viewport } from 'next/dist/lib/metadata/types/extra-types'
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer'
 
 import Footer from '@/components/partials/footer'
@@ -13,12 +14,32 @@ import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://journey.khoirul.me'),
-	title: 'A Journey',
+	title: {
+		default: 'A Journey',
+		template: '%s | A Journey',
+	},
 	description:
 		'Sebuah tempat, dimana sedikit ringkasan perjalanan penulis berada, dan akan tetap abadi, semoga.',
-	abstract:
-		'Sebuah tempat, dimana sedikit ringkasan perjalanan penulis berada, dan akan tetap abadi, semoga.',
 	viewport: 'width=device-width, initial-scale=1',
+	openGraph: {
+		type: 'website',
+		title: {
+			template: '%s | A Journey',
+			default: 'A Journey',
+		},
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: {
+			template: '%s | A Journey',
+			default: 'A Journey',
+		},
+	},
+}
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
 }
 
 export default function RootLayout({

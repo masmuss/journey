@@ -11,7 +11,7 @@ type WritingListPropsType = {
 	className: string
 }
 
-export default function PostsList(props: WritingListPropsType) {
+export default function PostsList(props: Readonly<WritingListPropsType>) {
 	const { posts } = props
 
 	posts.sort((a: AllTypes, b: AllTypes) => {

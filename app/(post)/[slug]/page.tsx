@@ -20,23 +20,36 @@ export const generateStaticParams = async () =>
 	allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
 export const generateMetadata = ({ params }: PostPageProps): Metadata => {
-	const post = allPosts.find(
-		(post) => post._raw.flattenedPath === params.slug,
-	)
-	if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
-	return {
-		title: post.title,
-		description: post.description,
-		openGraph: {
+	try {
+		const post = allPosts.find(
+			(post) => post._raw.flattenedPath === params.slug,
+		)
+
+		if (!post)
+			return {
+				title: 'Post Not Found',
+				description: 'The post you requested does not exist.',
+			}
+
+		return {
 			title: post.title,
 			description: post.description,
-			images: post.images,
-		},
-		twitter: {
-			title: post.title,
-			description: post.description,
-			images: post.images,
-		},
+			openGraph: {
+				title: post.title,
+				description: post.description,
+			},
+			twitter: {
+				title: post.title,
+				description: post.description,
+				images: post.images,
+			},
+		}
+	} catch (error) {
+		console.error(error)
+		return {
+			title: 'Post Not Found',
+			description: 'The post you requested does not exist.',
+		}
 	}
 }
 
