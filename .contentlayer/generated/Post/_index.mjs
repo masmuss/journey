@@ -7,5 +7,6 @@ import notABadLifeMdx from './not-a-bad-life.mdx.json' assert { type: 'json' }
 import perspektifMdx from './perspektif.mdx.json' assert { type: 'json' }
 import pulangMdx from './pulang.mdx.json' assert { type: 'json' }
 import reflectAndAdjustMdx from './reflect-and-adjust.mdx.json' assert { type: 'json' }
+import resilienceMdx from './resilience.mdx.json' assert { type: 'json' }
 
-export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx]
+export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx, resilienceMdx]
