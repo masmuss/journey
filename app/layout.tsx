@@ -2,7 +2,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-import { Viewport } from 'next/dist/lib/metadata/types/extra-types'
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer'
 
 import Footer from '@/components/partials/footer'
@@ -35,11 +34,6 @@ export const metadata: Metadata = {
 			default: 'A Journey',
 		},
 	},
-}
-
-export const viewport: Viewport = {
-	width: 'device-width',
-	initialScale: 1,
 }
 
 export default function RootLayout({
