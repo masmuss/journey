@@ -2,7 +2,7 @@ import { Roboto_Mono } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ModeToggle } from '@/components/mode-toggle'
+import { ModeToggle } from '@/components/global/ModeToggle'
 import { cn } from '@/lib/utils'
 
 const robotoMono = Roboto_Mono({

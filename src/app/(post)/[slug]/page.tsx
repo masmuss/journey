@@ -6,7 +6,7 @@ import { ReactElement } from 'react'
 import { Balancer } from 'react-wrap-balancer'
 
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShareButtons'
-import { montserrat } from '@/config/font'
+import { montserrat } from '@/config/fonts'
 import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
 import { allPosts } from 'contentlayer/generated'
 

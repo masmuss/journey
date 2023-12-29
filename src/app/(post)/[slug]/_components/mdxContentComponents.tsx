@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { montserrat } from '@/config/font'
+import { montserrat } from '@/config/fonts'
 import { cn } from '@/lib/utils'
 
 export function a({ href, children }: React.HTMLProps<HTMLAnchorElement>) {

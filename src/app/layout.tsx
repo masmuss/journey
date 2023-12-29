@@ -4,34 +4,33 @@ import './globals.css'
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer'
 
-import Footer from '@/components/partials/footer'
-import Navbar from '@/components/partials/navbar'
-import ScrollToTopButton from '@/components/partials/ScrollToTopButton'
+import ScrollToTopButton from '@/components/global/ScrollToTopButton'
+import Footer from '@/components/layout/footer'
+import Navbar from '@/components/layout/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
-import { hind } from '@/config/font'
+import { notoSans } from '@/config/fonts'
+import siteMetadata from '@/config/site-metadata'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://journey.khoirul.me'),
 	title: {
-		default: 'A Journey',
-		template: '%s | A Journey',
+		default: siteMetadata.title,
+		template: `%s | ${siteMetadata.title}`,
 	},
-	description:
-		'Sebuah tempat, dimana sedikit ringkasan perjalanan penulis berada, dan akan tetap abadi, semoga.',
-	viewport: 'width=device-width, initial-scale=1',
+	description: siteMetadata.description,
 	openGraph: {
 		type: 'website',
 		title: {
-			template: '%s | A Journey',
-			default: 'A Journey',
+			template: `%s | ${siteMetadata.title}`,
+			default: siteMetadata.title,
 		},
 	},
 	twitter: {
 		card: 'summary_large_image',
 		title: {
-			template: '%s | A Journey',
-			default: 'A Journey',
+			template: `%s | ${siteMetadata.title}`,
+			default: siteMetadata.title,
 		},
 	},
 }
@@ -45,8 +44,8 @@ export default function RootLayout({
 		<html lang="id" className="h-full">
 			<body
 				className={cn(
-					hind.className,
-					'relative scroll-smooth bg-zinc-200/70 dark:bg-zinc-950',
+					notoSans.className,
+					'relative scroll-smooth bg-zinc-100 dark:bg-zinc-900',
 				)}
 			>
 				<ThemeProvider

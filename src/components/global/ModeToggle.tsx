@@ -20,7 +20,7 @@ export function ModeToggle() {
 				<Button
 					variant="outline"
 					size="icon"
-					className="rounded-none bg-zinc-200/70 focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-950"
+					className="rounded-none bg-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-900"
 				>
 					<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 					<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -29,7 +29,7 @@ export function ModeToggle() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
 				align="end"
-				className="rounded-none bg-zinc-200/70 dark:bg-zinc-950 [&>*]:cursor-pointer"
+				className="rounded-none bg-zinc-100 dark:bg-zinc-900 [&>*]:cursor-pointer"
 			>
 				<DropdownMenuItem onClick={() => setTheme('light')}>
 					Light
