@@ -1,14 +1,13 @@
 import { compareDesc } from 'date-fns'
 
+import HomeHeader from '@/components/partials/Home/HomeHeader'
 import LatestPost from '@/components/partials/Post/LatestPostCard'
 import PostsList from '@/components/partials/Post/PostsList'
 import { cn } from '@/lib/utils'
 import { AllTypes as Post, allPosts } from 'contentlayer/generated'
 
-import HomeHeader from '../../components/partials/Home/HomeHeader'
-
 export default async function HomePage() {
-	const posts = allPosts.toSorted((a: Post, b: Post) => {
+	const posts = allPosts.sort((a: Post, b: Post) => {
 		return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
 	})
 
