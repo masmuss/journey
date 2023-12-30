@@ -6,7 +6,7 @@ import { notoSerif } from '@/config/fonts'
 import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
 import { AllTypes as Post } from 'contentlayer/generated'
 
-export default function PostListItem(props: Readonly<{ post: Post }>) {
+export default function PostCard(props: Readonly<{ post: Post }>) {
 	const { post } = props
 	return (
 		<Link href={post.url} className="w-full">

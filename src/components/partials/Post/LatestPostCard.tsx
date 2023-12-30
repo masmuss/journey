@@ -6,7 +6,7 @@ import { notoSerif } from '@/config/fonts'
 import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
 import { AllTypes as Post } from 'contentlayer/generated'
 
-export default function LatestPost(props: Readonly<{ post: Post }>) {
+export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 	const { post } = props
 	return (
 		<Link

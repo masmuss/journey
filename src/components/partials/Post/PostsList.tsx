@@ -1,9 +1,7 @@
-'use client'
-
 import { cn } from '@/lib/utils'
 import { AllTypes as Post } from 'contentlayer/generated'
 
-import PostListItem from './PostListItem'
+import PostCard from './PostCard'
 
 type WritingListPropsType = {
 	posts: Post[]
@@ -16,7 +14,7 @@ export default function PostsList(props: Readonly<WritingListPropsType>) {
 	return (
 		<div className={cn(props.className)}>
 			{posts.map((post) => (
-				<PostListItem post={post} key={post._id} />
+				<PostCard post={post} key={post._id} />
 			))}
 		</div>
 	)
