@@ -45,7 +45,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					notoSans.className,
-					'relative scroll-smooth bg-zinc-100 dark:bg-zinc-900',
+					'relative scroll-smooth bg-zinc-100 antialiased dark:bg-zinc-900',
 				)}
 			>
 				<ThemeProvider

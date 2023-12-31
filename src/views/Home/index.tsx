@@ -21,7 +21,7 @@ export default async function HomePage() {
 					className={cn(
 						'mb-32 grid w-full grid-cols-1 gap-y-16',
 						'md:mx-auto md:max-w-2xl md:grid-cols-2 md:gap-10',
-						'lg:max-w-5xl lg:grid-cols-3',
+						'xl:max-w-5xl xl:grid-cols-3',
 					)}
 				/>
 			</div>

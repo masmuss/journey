@@ -30,8 +30,9 @@ export default function ScrollToTopButton(
 	return (
 		<div className={props.className}>
 			<Button
+				aria-label="Scroll to Top"
 				className={cn(
-					'rounded-full border border-zinc-300 bg-zinc-200/70 px-2 py-2 shadow-md transition-all duration-500 hover:scale-110 [&>svg]:text-zinc-950',
+					'rounded-full border border-zinc-300 bg-zinc-200/70 px-2 py-2 shadow-md backdrop-blur-md transition-all duration-500 hover:scale-110 [&>svg]:text-zinc-950',
 					showTopBtn
 						? 'translate-y-0 opacity-100'
 						: 'translate-y-96 opacity-0',
