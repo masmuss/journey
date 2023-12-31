@@ -14,19 +14,19 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 			className={cn(
 				'mx-auto w-full',
 				'md:mx-auto md:grid md:max-w-2xl md:grid-cols-2',
-				'lg:max-w-5xl',
+				'xl:max-w-5xl',
 			)}
 		>
 			<div
 				className={cn(
 					'md:col-span-2',
-					'lg:flex lg:items-center lg:justify-between lg:gap-8',
+					'xl:flex xl:items-center xl:justify-between xl:gap-8',
 				)}
 			>
 				<div
 					className={cn(
 						'group mb-5 aspect-4/3 w-full overflow-hidden',
-						'lg:col-start-1 lg:mb-0',
+						'xl:col-start-1 xl:mb-0',
 					)}
 				>
 					<Image
@@ -47,7 +47,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 				<div
 					className={cn(
 						'w-full text-center',
-						'lg:col-start-2 lg:text-left',
+						'xl:col-start-2 xl:text-left',
 					)}
 				>
 					<h1
@@ -55,7 +55,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 							notoSerif.className,
 							'mb-3 text-xl font-semibold',
 							'md:text-4xl',
-							'lg:text-5xl',
+							'xl:text-5xl',
 						)}
 					>
 						{post.title}
@@ -64,7 +64,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 						className={cn(
 							'text-sm opacity-70',
 							'md:mt-2 md:text-base',
-							'lg:mt-8',
+							'xl:mt-8',
 						)}
 					>
 						<Balancer>{post.description}</Balancer>
