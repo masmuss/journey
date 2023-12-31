@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		return {
 			url: `${baseUrl}/${post._raw.flattenedPath}`,
 			lastModified: new Date(),
-			changeFrequency: 'weekly',
+			changeFrequency: 'monthly',
 			priority: 1,
 		}
 	})
