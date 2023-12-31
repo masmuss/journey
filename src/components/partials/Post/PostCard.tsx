@@ -42,8 +42,8 @@ export default function PostCard(props: Readonly<{ post: Post }>) {
 				</h1>
 				<p
 					className={cn(
-						'text-sm opacity-70',
-						'md:mt-2 md:text-sm',
+						'px-2 text-sm opacity-70',
+						'md:mt-2 md:px-0 md:text-sm',
 						'lg:mt-6',
 					)}
 				>

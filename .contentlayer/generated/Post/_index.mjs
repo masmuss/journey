@@ -8,5 +8,6 @@ import perspektifMdx from './perspektif.mdx.json' assert { type: 'json' }
 import pulangMdx from './pulang.mdx.json' assert { type: 'json' }
 import reflectAndAdjustMdx from './reflect-and-adjust.mdx.json' assert { type: 'json' }
 import resilienceMdx from './resilience.mdx.json' assert { type: 'json' }
+import refleksi_2023DanAsa_2024Mdx from './refleksi-2023-dan-asa-2024.mdx.json' assert { type: 'json' }
 
-export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx, resilienceMdx]
+export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx, resilienceMdx, refleksi_2023DanAsa_2024Mdx]
