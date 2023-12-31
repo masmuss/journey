@@ -11,13 +11,11 @@ export default async function HomePage() {
 		return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
 	})
 
-	const latestPost = posts[0]
-
 	return (
 		<>
 			<HomeHeader />
 			<div className="grid grid-cols-1 gap-y-16 md:gap-10">
-				<LatestPost post={latestPost} />
+				<LatestPost post={posts[0]} />
 				<PostsList
 					posts={posts.slice(1)}
 					className={cn(

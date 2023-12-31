@@ -9,7 +9,7 @@ import { AllTypes as Post } from 'contentlayer/generated'
 export default function PostCard(props: Readonly<{ post: Post }>) {
 	const { post } = props
 	return (
-		<Link href={post.url} className="w-full">
+		<Link href={post.url} className="block w-full">
 			<div
 				className={cn(
 					'group relative mb-5 aspect-4/3 w-full overflow-hidden',
@@ -40,7 +40,13 @@ export default function PostCard(props: Readonly<{ post: Post }>) {
 				>
 					{post.title}
 				</h1>
-				<p className={cn('text-sm', 'opacity-70 md:mt-2 md:text-base')}>
+				<p
+					className={cn(
+						'text-sm opacity-70',
+						'md:mt-2 md:text-sm',
+						'lg:mt-6',
+					)}
+				>
 					<Balancer>{post.description}</Balancer>
 				</p>
 				<div className="mt-2 space-x-1 text-xs opacity-60 md:mt-4">

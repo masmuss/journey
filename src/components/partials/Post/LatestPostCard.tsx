@@ -20,12 +20,12 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 			<div
 				className={cn(
 					'md:col-span-2',
-					'lg:flex lg:items-center lg:justify-center lg:gap-8',
+					'lg:flex lg:items-center lg:justify-between lg:gap-8',
 				)}
 			>
 				<div
 					className={cn(
-						'group mb-5 aspect-4/3 overflow-hidden',
+						'group mb-5 aspect-4/3 w-full overflow-hidden',
 						'lg:col-start-1 lg:mb-0',
 					)}
 				>
@@ -45,7 +45,10 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 					/>
 				</div>
 				<div
-					className={cn('text-center', 'lg:col-start-2 lg:text-left')}
+					className={cn(
+						'w-full text-center',
+						'lg:col-start-2 lg:text-left',
+					)}
 				>
 					<h1
 						className={cn(
@@ -57,10 +60,16 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 					>
 						{post.title}
 					</h1>
-					<p className={cn('text-sm', 'md:mt-2 md:text-base')}>
+					<p
+						className={cn(
+							'text-sm opacity-70',
+							'md:mt-2 md:text-base',
+							'lg:mt-8',
+						)}
+					>
 						<Balancer>{post.description}</Balancer>
 					</p>
-					<div className="mt-2 space-x-1 text-xs lg:mt-6">
+					<div className="mt-2 space-x-1 text-xs opacity-60 lg:mt-2">
 						<span>{getFormattedDate(post.publishedAt)}</span>
 						<span>&mdash;</span>
 						<span>{readTimeCount(post.body.raw)} min read</span>
