@@ -5,26 +5,31 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
 import * as mdxContentComponents from './mdxContentComponents'
 
-import { cn } from '@/lib/utils'
+import { cn, getFormattedDate } from '@/lib/utils'
 
-export function MdxContent({ code }: Readonly<{ code: string }>) {
+type MdxContentProps = {
+	code: string
+	title: string
+	publishDate: string
+}
+
+export function MdxContent({
+	code,
+	title,
+	publishDate,
+}: Readonly<MdxContentProps>) {
 	const Component = useMDXComponent(code)
 
 	function copyListener(event: ClipboardEvent) {
-		const range = window.getSelection()!.getRangeAt(0),
-			rangeContents = range.cloneContents(),
-			pageLink = `Read more at: ${document.location.href}`,
-			helper = document.createElement('div')
-
-		helper.appendChild(rangeContents)
+		const pageLink = `This article was published in ${
+			document.location.host
+		} at ${getFormattedDate(
+			publishDate,
+		)} with the title "${title}". Click to read: ${document.location.href}.`
 
 		event.clipboardData!.setData(
 			'text/plain',
-			`${helper.innerText}\n${pageLink}`,
-		)
-		event.clipboardData!.setData(
-			'text/html',
-			`${helper.innerHTML}<br>${pageLink}`,
+			`${document.getSelection()}\n\n${pageLink}`,
 		)
 		event.preventDefault()
 	}

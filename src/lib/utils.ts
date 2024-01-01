@@ -12,9 +12,10 @@ export function cn(...inputs: ClassValue[]) {
 export function getFormattedDate(
 	dateString: string,
 	dateFormat?: string,
+	locale?: Locale,
 ): string {
 	return format(parseISO(dateString), dateFormat ?? 'LLLL d, yyyy', {
-		locale: id,
+		locale: locale ? locale : id,
 	})
 }
 

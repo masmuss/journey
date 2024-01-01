@@ -56,11 +56,15 @@ export default async function PostPageContent(props: Readonly<PostpageProps>) {
 				loading="lazy"
 				className="mt-8 aspect-4/3 w-full bg-zinc-300 object-cover blur-0 transition duration-500 dark:bg-zinc-700"
 			/>
-			<article className="max-w-4xl px-6 md:mt-2">
+			<div className="max-w-4xl px-6 md:mt-2">
 				<Balancer>
-					<MdxContent code={post.body.code} />
+					<MdxContent
+						title={post.title}
+						publishDate={post.publishedAt}
+						code={post.body.code}
+					/>
 				</Balancer>
-			</article>
+			</div>
 			{/* <div className="flex gap-2 px-6">
 				<span>Share :</span>
 				<SocialMediaShareButtons

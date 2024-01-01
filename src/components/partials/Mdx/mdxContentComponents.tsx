@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { montserrat } from '@/config/fonts'
+import { notoSerif } from '@/config/fonts'
 import { cn } from '@/lib/utils'
 
 export function a({ href, children }: React.HTMLProps<HTMLAnchorElement>) {
@@ -44,7 +44,7 @@ export function p({ children }: React.HTMLProps<HTMLParagraphElement>) {
 
 export function h1({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	return (
-		<h1 className={cn(montserrat.className, 'text-2xl font-semibold')}>
+		<h1 className={cn(notoSerif.className, 'text-2xl font-semibold')}>
 			{children}
 		</h1>
 	)
@@ -52,7 +52,7 @@ export function h1({ children }: React.HTMLProps<HTMLHeadingElement>) {
 
 export function h2({ children }: React.HTMLProps<HTMLHeadingElement>) {
 	return (
-		<h2 className={cn(montserrat.className, 'text-xl font-semibold')}>
+		<h2 className={cn(notoSerif.className, 'text-xl font-semibold')}>
 			{children}
 		</h2>
 	)
