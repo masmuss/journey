@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/order */
 'use client'
 
@@ -20,7 +21,7 @@ export function MdxContent({
 }: Readonly<MdxContentProps>) {
 	const Component = useMDXComponent(code)
 
-	function copyListener(event: ClipboardEvent) {
+	function copyListener(event: any) {
 		const pageLink = `This article was published in ${
 			document.location.host
 		} at ${getFormattedDate(
@@ -34,8 +35,6 @@ export function MdxContent({
 		event.preventDefault()
 	}
 
-	document.addEventListener('copy', copyListener)
-
 	return (
 		<article
 			className={cn(
@@ -43,6 +42,7 @@ export function MdxContent({
 				'md:py-10',
 				'dark:text-zinc-200',
 			)}
+			onCopy={copyListener}
 		>
 			<Component components={{ Image, ...mdxContentComponents }} />
 		</article>
