@@ -6,5 +6,6 @@
 		"source.fixAll": "explicit",
 		"source.organizeImports": "explicit"
 	},
-	"zenMode.showTabs": "none"
+	"zenMode.showTabs": "none",
+	"terminal.explorerKind": "external"
 }

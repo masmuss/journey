@@ -14,6 +14,7 @@ export type Post = {
   _raw: Local.RawDocumentData
   type: 'Post'
   title: string
+  tags: string[]
   description: string
   publishedAt: IsoDateTimeString
   images: string

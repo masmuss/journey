@@ -38,8 +38,8 @@ export function MdxContent({
 	return (
 		<article
 			className={cn(
-				'prose-base prose-zinc mx-auto mb-10 max-w-2xl pt-8',
-				'md:py-10',
+				'prose-lg prose-zinc mx-auto mb-10 max-w-3xl pt-8',
+				'md:prose-xl md:py-10',
 				'dark:text-zinc-200',
 			)}
 			onCopy={copyListener}

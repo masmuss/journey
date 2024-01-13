@@ -44,6 +44,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 						)}
 					/>
 				</div>
+
 				<div
 					className={cn(
 						'w-full text-center',
