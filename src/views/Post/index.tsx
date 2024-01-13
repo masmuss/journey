@@ -42,7 +42,7 @@ export default async function PostPageContent(props: Readonly<PostpageProps>) {
 					/>
 				</Balancer>
 			</div>
-			<div className="flex w-full flex-col items-center justify-center gap-2 px-6">
+			<div className="flex w-full flex-col items-center justify-center gap-4 px-6">
 				<span
 					className={cn(notoSerif.className, 'text-xl font-semibold')}
 				>
