@@ -6,7 +6,7 @@ import PostsList from '@/components/partials/Post/PostsList'
 import { cn } from '@/lib/utils'
 import { AllTypes as Post, allPosts } from 'contentlayer/generated'
 
-export default async function HomePage() {
+export default async function HomeView() {
 	const posts = allPosts.sort((a: Post, b: Post) => {
 		return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
 	})

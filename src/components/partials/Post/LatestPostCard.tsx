@@ -1,10 +1,12 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { Balancer } from 'react-wrap-balancer'
 
-import { notoSerif } from '@/config/fonts'
-import { cn, getFormattedDate, readTimeCount } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import { AllTypes as Post } from 'contentlayer/generated'
+
+import PostCardImage from './PostCard/PostCardImage'
+import PostDescription from './PostCard/PostDescription'
+import PostMeta from './PostCard/PostMeta'
+import PostTitle from './PostCard/PostTitle'
 
 export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 	const { post } = props
@@ -29,19 +31,11 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 						'xl:col-start-1 xl:mb-0',
 					)}
 				>
-					<Image
-						alt={post.title}
+					<PostCardImage
+						title={post.title}
 						src={post.images}
 						width={500}
 						height={300}
-						decoding="async"
-						loading="lazy"
-						className={cn(
-							'aspect-4/3 w-full object-cover brightness-95 transition-all duration-300',
-							'dark:brightness-50',
-							'group-hover:scale-110 group-hover:brightness-75',
-							'dark:group-hover:brightness-90',
-						)}
 					/>
 				</div>
 
@@ -51,30 +45,23 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 						'xl:col-start-2 xl:text-left',
 					)}
 				>
-					<h1
-						className={cn(
-							notoSerif.className,
-							'mb-3 text-xl font-semibold',
-							'md:text-4xl',
-							'xl:text-5xl',
-						)}
+					<PostTitle
+						className={cn('text-xl', 'md:text-4xl', 'xl:text-5xl')}
 					>
 						{post.title}
-					</h1>
-					<p
+					</PostTitle>
+					<PostDescription
 						className={cn(
-							'px-2 text-sm opacity-70',
-							'md:mt-2 md:px-6 md:text-base',
+							'md:px-6 md:text-base',
 							'xl:mt-8 xl:px-0',
 						)}
 					>
-						<Balancer>{post.description}</Balancer>
-					</p>
-					<div className="mt-2 space-x-1 text-xs opacity-60 lg:mt-2">
-						<span>{getFormattedDate(post.publishedAt)}</span>
-						<span>&mdash;</span>
-						<span>{readTimeCount(post.body.raw)} min read</span>
-					</div>
+						{post.description}
+					</PostDescription>
+					<PostMeta
+						publishedAt={post.publishedAt}
+						bodyRaw={post.body.raw}
+					/>
 				</div>
 			</div>
 		</Link>

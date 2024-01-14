@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
 
-import PostPageContent from '@/views/Post'
+import PostPageContent from '@/views/PostWithSlug'
 import { allPosts } from 'contentlayer/generated'
 
 export type PostPageProps = {

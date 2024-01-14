@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Balancer } from 'react-wrap-balancer'
 
-import { MdxContent } from '@/components/partials/Mdx/MdxContent'
+import { MdxContent } from '@/components/partials/Post/Mdx/MdxContent'
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShare/SocialMediaShareButtons'
 import { notoSerif } from '@/config/fonts'
 import { cn } from '@/lib/utils'
@@ -14,7 +14,7 @@ type PostpageProps = {
 	params: { slug: string }
 }
 
-export default async function PostPageContent(props: Readonly<PostpageProps>) {
+export default async function PostWithSlugView(props: Readonly<PostpageProps>) {
 	const { post, params } = props
 
 	return (
