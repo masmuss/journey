@@ -6,6 +6,7 @@ import { AllTypes as Post } from 'contentlayer/generated'
 import PostCardImage from './PostCard/PostCardImage'
 import PostDescription from './PostCard/PostDescription'
 import PostMeta from './PostCard/PostMeta'
+import PostTag from './PostCard/PostTag'
 import PostTitle from './PostCard/PostTitle'
 
 export default function LatestPostCard(props: Readonly<{ post: Post }>) {
@@ -30,6 +31,11 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 				)}
 			>
 				<div>
+					<div className="mb-2 flex flex-wrap justify-center space-x-2 md:justify-start">
+						{post.tags.map((tag) => (
+							<PostTag key={tag}>{tag}</PostTag>
+						))}
+					</div>
 					<PostTitle
 						className={cn(
 							'mb-4 text-4xl leading-tight',

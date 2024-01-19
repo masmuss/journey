@@ -27,7 +27,7 @@ export default function PostCard(props: Readonly<PostCardProps>) {
 				/>
 			</div>
 			<div className="px-6 text-center md:px-0 md:text-left">
-				<div className="mb-2 flex flex-wrap gap-2 p-4 md:p-0">
+				<div className="mb-2 flex flex-wrap justify-center gap-2 p-4 md:justify-start md:p-0">
 					{post.tags.map((tag) => (
 						<PostTag key={tag}>{tag}</PostTag>
 					))}
