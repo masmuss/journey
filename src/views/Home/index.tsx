@@ -1,30 +1,19 @@
 import { compareDesc } from 'date-fns'
 
-import HomeHeader from '@/components/partials/Home/HomeHeader'
 import LatestPost from '@/components/partials/Post/LatestPostCard'
-import PostsList from '@/components/partials/Post/PostsList'
-import { cn } from '@/lib/utils'
+import MoreStories from '@/components/partials/Post/MoreStories'
 import { AllTypes as Post, allPosts } from 'contentlayer/generated'
 
-export default async function HomePage() {
+export default async function HomeView() {
 	const posts = allPosts.sort((a: Post, b: Post) => {
 		return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
 	})
 
 	return (
 		<>
-			<HomeHeader />
-			<div className="grid grid-cols-1 gap-y-16 md:gap-10">
-				<LatestPost post={posts[0]} />
-				<PostsList
-					posts={posts.slice(1)}
-					className={cn(
-						'mb-32 grid w-full grid-cols-1 gap-y-16',
-						'md:mx-auto md:max-w-2xl md:grid-cols-2 md:gap-10',
-						'xl:max-w-5xl xl:grid-cols-3',
-					)}
-				/>
-			</div>
+			{/* <HomeHeader /> */}
+			<LatestPost post={posts[0]} />
+			<MoreStories moreStories={posts.slice(1)} />
 		</>
 	)
 }

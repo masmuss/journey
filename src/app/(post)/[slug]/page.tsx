@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ReactElement } from 'react'
 
-import PostPageContent from '@/views/Post'
+import PostPageContent from '@/views/PostWithSlug'
 import { allPosts } from 'contentlayer/generated'
 
 export type PostPageProps = {
@@ -55,7 +56,13 @@ export default async function PostPage({
 	if (!post) notFound()
 
 	return (
-		<div className="mx-auto flex w-full items-start gap-8 py-16">
+		<div className="container mx-auto mt-20">
+			<h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+				<Link href="/" className="hover:underline">
+					A Journey
+				</Link>
+				.
+			</h2>
 			<PostPageContent params={params} post={post} />
 		</div>
 	)

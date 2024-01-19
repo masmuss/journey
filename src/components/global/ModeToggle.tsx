@@ -18,7 +18,7 @@ export function ModeToggle() {
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button
-					variant="outline"
+					variant="link"
 					size="icon"
 					className="rounded-none bg-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-900"
 				>

@@ -6,7 +6,6 @@ import { Provider as WrapBalancerProvider } from 'react-wrap-balancer'
 
 import ScrollToTopButton from '@/components/global/ScrollToTopButton'
 import Footer from '@/components/layout/footer'
-import Navbar from '@/components/layout/navbar'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { notoSans } from '@/config/fonts'
 import siteMetadata from '@/config/site-metadata'
@@ -54,12 +53,11 @@ export default function RootLayout({
 					enableSystem
 					themes={['light', 'dark', 'system']}
 				>
-					<WrapBalancerProvider>
-						<Navbar />
-						{children}
+					<main className="container mx-auto px-5">
+						<WrapBalancerProvider>{children}</WrapBalancerProvider>
 						<Footer />
 						<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
-					</WrapBalancerProvider>
+					</main>
 				</ThemeProvider>
 			</body>
 		</html>
