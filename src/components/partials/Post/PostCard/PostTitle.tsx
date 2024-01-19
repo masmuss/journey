@@ -8,7 +8,7 @@ type PostTitleProps = {
 	className?: string
 }
 
-export default function PostTitle(props: PostTitleProps) {
+export default function PostTitle(props: Readonly<PostTitleProps>) {
 	const { children, className } = props
 	return (
 		<h1

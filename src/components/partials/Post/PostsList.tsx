@@ -14,7 +14,11 @@ export default function PostsList(props: Readonly<WritingListPropsType>) {
 	return (
 		<div className={cn(props.className)}>
 			{posts.map((post) => (
-				<PostCard post={post} key={post._id} />
+				<PostCard
+					post={post}
+					key={post._id}
+					className="h-auto break-inside-avoid-column"
+				/>
 			))}
 		</div>
 	)

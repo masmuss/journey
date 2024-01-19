@@ -3,7 +3,7 @@ import PostDescription from './PostDescription'
 import PostMeta from './PostMeta'
 import PostTitle from './PostTitle'
 
-const PostCard = {
+export const PostCard = {
 	PostCardImage,
 	PostDescription,
 	PostMeta,

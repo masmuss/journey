@@ -1,31 +1,22 @@
-import { Roboto_Mono } from 'next/font/google'
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { ModeToggle } from '@/components/global/ModeToggle'
+import siteMetadata from '@/config/site-metadata'
 import { cn } from '@/lib/utils'
 
-const robotoMono = Roboto_Mono({
-	subsets: ['latin'],
-})
-
-export default function Navbar() {
+type NavbarProps = {
+	children: React.ReactNode
+	className?: string
+}
+export default function Navbar({ children, className }: Readonly<NavbarProps>) {
 	return (
-		<nav className="mx-auto flex w-full items-center justify-between px-6 py-8 md:max-w-4xl md:px-16">
-			<Link
-				href={'/'}
-				className={cn(robotoMono.className, 'text-3xl font-extrabold')}
-			>
-				<Image
-					src={
-						'https://cdn.jsdelivr.net/npm/twemoji@11.3.0/2/svg/1f4d8.svg'
-					}
-					alt="logo"
-					width={36}
-					height={36}
-				/>
-			</Link>
-			<ModeToggle />
+		<nav
+			className={cn(
+				'mb-16 mt-16 flex flex-col items-center md:mb-12',
+				className,
+			)}
+		>
+			{children}
+			<h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
+				{siteMetadata.headerTitle}.
+			</h4>
 		</nav>
 	)
 }

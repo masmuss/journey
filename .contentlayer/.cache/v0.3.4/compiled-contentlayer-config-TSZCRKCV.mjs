@@ -15,6 +15,10 @@ var Post = defineDocumentType(() => ({
     url: {
       type: "string",
       resolve: (post) => `/${post._raw.flattenedPath}`
+    },
+    order: {
+      type: "string",
+      resolve: (post) => post._raw.flattenedPath.split("/").pop()
     }
   }
 }));
@@ -29,4 +33,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-REZ7K42J.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-TSZCRKCV.mjs.map

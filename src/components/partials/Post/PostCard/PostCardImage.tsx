@@ -11,7 +11,7 @@ type PostCardImageProps = {
 	className?: string
 }
 
-export default function PostCardImage(props: PostCardImageProps) {
+export default function PostCardImage(props: Readonly<PostCardImageProps>) {
 	const { title, src, width = 500, height = 300, className } = props
 
 	return (
@@ -24,7 +24,7 @@ export default function PostCardImage(props: PostCardImageProps) {
 			loading="lazy"
 			className={cn(
 				'aspect-4/3 w-full object-cover brightness-95 transition-all duration-300',
-				'dark:brightness-50',
+				'dark:brightness-70',
 				'group-hover:scale-110 group-hover:brightness-75',
 				'dark:group-hover:brightness-90',
 				className,
