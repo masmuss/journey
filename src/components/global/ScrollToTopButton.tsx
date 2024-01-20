@@ -41,7 +41,7 @@ export default function ScrollToTopButton(
 				size="icon"
 				onClick={goToTop}
 			>
-				<ArrowUp className="h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6" />
+				<ArrowUp className="h-5 w-5 opacity-40 transition-opacity duration-300 hover:opacity-100 md:h-6 md:w-6 lg:w-8" />
 			</Button>
 		</div>
 	)

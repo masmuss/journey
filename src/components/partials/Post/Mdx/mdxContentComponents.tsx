@@ -79,7 +79,7 @@ export function blockquote({ children }: React.HTMLProps<HTMLQuoteElement>) {
 				<div
 					className={cn(
 						notoSerif.className,
-						'relative z-10 text-xl font-semibold text-gray-800 dark:text-white md:text-2xl md:leading-loose',
+						'relative z-10 text-xl text-zinc-800 dark:text-white md:text-2xl md:leading-loose',
 					)}
 				>
 					{children}

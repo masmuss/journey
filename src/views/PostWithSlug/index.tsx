@@ -3,6 +3,7 @@ import { Balancer } from 'react-wrap-balancer'
 import { MdxContent } from '@/components/partials/Post/Mdx/MdxContent'
 import MoreStories from '@/components/partials/Post/MoreStories'
 import PostCardImage from '@/components/partials/Post/PostCard/PostCardImage'
+import PostImageAttribution from '@/components/partials/Post/PostCard/PostImageAttribution'
 import SocialMediaShareButtons from '@/components/partials/SocialMediaShare/SocialMediaShareButtons'
 import { notoSerif } from '@/config/fonts'
 import { moreStories } from '@/lib/post'
@@ -24,13 +25,20 @@ export default async function PostWithSlugView(props: Readonly<PostpageProps>) {
 	return (
 		<div className="w-full">
 			<PostHeader>{post.title}</PostHeader>
-			<PostCardImage
-				title={`Cover image for ${post.title}`}
-				src={post.images}
-				width={1000}
-				height={500}
-				className="mb-8 sm:mx-0 md:mb-16 md:aspect-video"
-			/>
+			<figure className="mb-8 sm:mx-0 md:mb-16">
+				<PostCardImage
+					title={`Cover image for ${post.title} -- ${post.imageAttribution?.raw}`}
+					src={post.images}
+					width={1000}
+					height={500}
+					className="md:aspect-video"
+				/>
+				{post.imageAttribution && (
+					<PostImageAttribution
+						attribution={post.imageAttribution.html}
+					/>
+				)}
+			</figure>
 			<div className="mx-auto max-w-4xl px-2 md:mt-2 md:px-6">
 				<p className="prose-lg max-w-3xl md:prose-xl">
 					Posted on {getFormattedDate(post.publishedAt)} under{' '}

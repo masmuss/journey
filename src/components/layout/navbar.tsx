@@ -14,8 +14,8 @@ export default function Navbar({ children, className }: Readonly<NavbarProps>) {
 			)}
 		>
 			{children}
-			<h4 className="mt-5 text-center text-lg md:pl-8 md:text-left">
-				{siteMetadata.headerTitle}.
+			<h4 className="mt-5 text-center text-lg italic md:pl-8 md:text-left">
+				&mdash; {siteMetadata.headerTitle}.
 			</h4>
 		</nav>
 	)

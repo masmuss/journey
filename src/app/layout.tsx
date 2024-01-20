@@ -53,7 +53,7 @@ export default function RootLayout({
 					enableSystem
 					themes={['light', 'dark', 'system']}
 				>
-					<main className="container mx-auto px-5">
+					<main className="container mx-auto px-5 transition-all duration-300">
 						<WrapBalancerProvider>{children}</WrapBalancerProvider>
 						<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
 					</main>
