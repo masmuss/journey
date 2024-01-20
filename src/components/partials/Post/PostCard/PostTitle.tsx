@@ -12,7 +12,12 @@ export default function PostTitle(props: Readonly<PostTitleProps>) {
 	const { children, className } = props
 	return (
 		<h1
-			className={cn(notoSerif.className, 'mb-3 font-semibold', className)}
+			className={cn(
+				notoSerif.className,
+				'mb-3 font-semibold',
+				'group-hover:underline',
+				className,
+			)}
 		>
 			{children}
 		</h1>

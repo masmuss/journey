@@ -56,8 +56,8 @@ export default async function PostPage({
 	if (!post) notFound()
 
 	return (
-		<div className="container mx-auto mt-20">
-			<h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+		<div className="mt-20">
+			<h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight hover:underline md:text-4xl md:tracking-tighter">
 				<Link href="/" className="hover:underline">
 					A Journey
 				</Link>

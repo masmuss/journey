@@ -31,7 +31,7 @@ export default async function PostWithSlugView(props: Readonly<PostpageProps>) {
 				height={500}
 				className="mb-8 sm:mx-0 md:mb-16 md:aspect-video"
 			/>
-			<div className="mx-auto max-w-4xl px-6 md:mt-2">
+			<div className="mx-auto max-w-4xl px-2 md:mt-2 md:px-6">
 				<p className="prose-lg max-w-3xl md:prose-xl">
 					Posted on {getFormattedDate(post.publishedAt)} under{' '}
 					{post.tags.join(', ')}
