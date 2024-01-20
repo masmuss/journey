@@ -19,7 +19,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 					src={post.images}
 					width={500}
 					height={300}
-					className="aspect-video"
+					className="md:aspect-video"
 				/>
 			</div>
 
@@ -31,16 +31,16 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 				)}
 			>
 				<div>
-					<div className="mb-2 flex flex-wrap justify-center space-x-2 md:justify-start">
+					<div className="mb-2 flex flex-wrap justify-start gap-2">
 						{post.tags.map((tag) => (
 							<PostTag key={tag}>{tag}</PostTag>
 						))}
 					</div>
 					<PostTitle
 						className={cn(
-							'mb-4 text-4xl leading-tight',
-							'lg:text-6xl',
-							'xl:text-5xl',
+							'mb-4 text-3xl leading-tight',
+							'lg:text-5xl',
+							'xl:text-6xl',
 						)}
 					>
 						{post.title}
@@ -48,12 +48,12 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 					<PostMeta
 						publishedAt={post.publishedAt}
 						bodyRaw={post.body.raw}
-						className="mb-4 text-lg md:mb-0"
+						className="mb-4 md:mb-0 md:text-lg"
 					/>
 				</div>
 
 				<div>
-					<PostDescription className="mb-4 text-lg leading-relaxed">
+					<PostDescription className="mb-4 leading-relaxed md:text-lg">
 						{post.description}
 					</PostDescription>
 				</div>

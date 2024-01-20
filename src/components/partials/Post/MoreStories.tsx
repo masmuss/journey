@@ -14,7 +14,7 @@ export default function MoreStories({ moreStories }: Readonly<MorePostProps>) {
 			<h2
 				className={cn(
 					notoSerif.className,
-					'mb-8 text-6xl font-bold leading-tight tracking-tight md:text-7xl',
+					'mb-8 text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl',
 				)}
 			>
 				More Stories

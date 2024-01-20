@@ -55,9 +55,9 @@ export default function RootLayout({
 				>
 					<main className="container mx-auto px-5">
 						<WrapBalancerProvider>{children}</WrapBalancerProvider>
-						<Footer />
 						<ScrollToTopButton className="fixed bottom-10 right-10 md:bottom-16 md:right-16" />
 					</main>
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

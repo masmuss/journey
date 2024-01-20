@@ -12,7 +12,7 @@ export default function PostDescription(props: Readonly<PostDescriptionProps>) {
 	const { children, className } = props
 
 	return (
-		<p className={cn('text-sm opacity-70', 'md:mt-2', className)}>
+		<p className={cn('w-full text-sm opacity-70', 'md:mt-2', className)}>
 			<Balancer>{children}</Balancer>
 		</p>
 	)

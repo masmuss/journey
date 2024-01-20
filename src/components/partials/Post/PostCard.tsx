@@ -24,6 +24,7 @@ export default function PostCard(props: Readonly<PostCardProps>) {
 					src={post.images}
 					width={500}
 					height={300}
+					className="md:aspect-video"
 				/>
 			</div>
 			<div className="px-6 text-center md:px-0 md:text-left">
@@ -32,14 +33,18 @@ export default function PostCard(props: Readonly<PostCardProps>) {
 						<PostTag key={tag}>{tag}</PostTag>
 					))}
 				</div>
-				<PostTitle className={cn('mb-3 text-3xl leading-snug')}>
+				<PostTitle
+					className={cn('mb-3 text-2xl leading-snug md:text-3xl')}
+				>
 					{post.title}
 				</PostTitle>
-				<PostDescription className={cn('mb-4 text-lg leading-relaxed')}>
+				<PostDescription
+					className={cn('mb-4 text-base leading-relaxed md:text-lg')}
+				>
 					{post.description}
 				</PostDescription>
 				<PostMeta
-					className="mt-4 text-lg lg:mt-4"
+					className="mt-4 md:text-lg lg:mt-4"
 					publishedAt={post.publishedAt}
 					bodyRaw={post.body.raw}
 				/>
