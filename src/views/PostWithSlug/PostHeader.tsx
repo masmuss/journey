@@ -15,7 +15,7 @@ export default function PostHeader(props: Readonly<PostHeaderProps>) {
 			<h1
 				className={cn(
 					notoSerif.className,
-					'mb-12 text-center text-4xl font-bold leading-tight md:text-left md:text-6xl md:leading-none lg:text-7xl',
+					'mb-12 text-center text-3xl font-bold leading-tight md:text-left md:text-6xl md:leading-none lg:text-7xl',
 				)}
 			>
 				{children}
