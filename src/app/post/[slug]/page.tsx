@@ -35,7 +35,6 @@ export const generateMetadata = ({ params }: PostPageProps): Metadata => {
 			twitter: {
 				title: post.title,
 				description: post.description,
-				images: post.images,
 			},
 		}
 	} catch (error) {
