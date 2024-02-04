@@ -25,7 +25,7 @@ export default function LatestPostCard(props: Readonly<{ post: Post }>) {
 
 			<div
 				className={cn(
-					'mb-20',
+					'group mb-20',
 					'md:mb-28 md:grid md:grid-cols-2 md:gap-x-16',
 					'lg:gap-x-8',
 				)}
