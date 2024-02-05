@@ -1,3 +1,5 @@
+import React from 'react'
+
 import siteMetadata from '@/config/site-metadata'
 import { cn } from '@/lib/utils'
 

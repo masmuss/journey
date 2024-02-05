@@ -6,7 +6,7 @@ export default async function Home() {
 		<section>
 			<Navbar className="lg:flex-row lg:justify-between">
 				<h1 className="text-5xl font-bold leading-tight tracking-tighter md:pr-8 md:text-7xl">
-					A Journey.
+					Random Tales.
 				</h1>
 			</Navbar>
 			<HomePage />

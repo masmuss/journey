@@ -1,7 +1,7 @@
 import { SiteConfig } from './config'
 
 const siteMetadata: SiteConfig = {
-	title: 'A Journey',
+	title: 'Random Tales',
 	author: 'Rexbocho',
 	headerTitle: 'Navigating the Sea of Reflections',
 	description:
@@ -10,7 +10,7 @@ const siteMetadata: SiteConfig = {
 	theme: 'system',
 	siteUrl:
 		process.env.NODE_ENV === 'production'
-			? 'https://journey.khoirul.me'
+			? 'https://www.randomtales.site/'
 			: 'http://localhost:3000',
 	twitter: 'https://twitter.com/rexbocho',
 	locale: 'id-ID',

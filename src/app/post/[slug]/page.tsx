@@ -58,7 +58,7 @@ export default async function PostPage({
 		<div className="mt-20">
 			<div className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight hover:underline md:text-4xl md:tracking-tighter">
 				<Link href="/" className="hover:underline">
-					A Journey
+					Random Tales
 				</Link>
 				.
 			</div>

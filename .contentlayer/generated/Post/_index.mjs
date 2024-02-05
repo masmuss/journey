@@ -9,7 +9,7 @@ import pulangMdx from './pulang.mdx.json' assert { type: 'json' }
 import reflectAndAdjustMdx from './reflect-and-adjust.mdx.json' assert { type: 'json' }
 import refleksi_2023DanAsa_2024Mdx from './refleksi-2023-dan-asa-2024.mdx.json' assert { type: 'json' }
 import resilienceMdx from './resilience.mdx.json' assert { type: 'json' }
-import whoAmIMdx from './who-am-i.mdx.json' assert { type: 'json' }
 import sebuahPerayaanPatahHatiMdx from './sebuah-perayaan-patah-hati.mdx.json' assert { type: 'json' }
+import whoAmIMdx from './who-am-i.mdx.json' assert { type: 'json' }
 
-export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx, refleksi_2023DanAsa_2024Mdx, resilienceMdx, whoAmIMdx, sebuahPerayaanPatahHatiMdx]
+export const allPosts = [akuInginMdx, helloWorldMdx, iWantButICantMdx, notABadLifeMdx, perspektifMdx, pulangMdx, reflectAndAdjustMdx, refleksi_2023DanAsa_2024Mdx, resilienceMdx, sebuahPerayaanPatahHatiMdx, whoAmIMdx]
