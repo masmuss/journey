@@ -3,6 +3,15 @@ const { withContentlayer } = require('next-contentlayer')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	// async redirects() {
+	// 	return [
+	// 		{
+	// 			source: '/auth/login',
+	// 			destination: '/',
+	// 			permanent: true,
+	// 		},
+	// 	]
+	// },
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
@@ -16,6 +25,12 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'unsplash.com',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'assets-global.website-files.com',
 				port: '',
 				pathname: '/**',
 			},
